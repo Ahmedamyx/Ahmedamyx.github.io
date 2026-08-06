@@ -1,4 +1,4 @@
-# Ahmed Boubakry — Portfolio
+# Ahmed Boubakry Portfolio
 
 Personal portfolio site. Robotics and computer vision: computational imaging, medical image
 analysis, control and mobile robotics.
