@@ -200,6 +200,19 @@ dialog.is-open .mw{opacity:1;transform:none}
 .v3d__key{display:flex;gap:1rem;font-size:.75rem;color:var(--ink-3);padding:.5rem .9rem .7rem}
 .v3d__key i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:.35rem;vertical-align:-1px}
 
+/* ---------- skills ---------- */
+.skills__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:1.1rem}
+.skl{border:1px solid var(--line);border-radius:4px;background:var(--card);padding:1.05rem 1.15rem 1.15rem;
+  transition:border-color .25s,transform .3s cubic-bezier(.2,.7,.3,1)}
+.skl:hover{border-color:var(--ink-3);transform:translateY(-3px)}
+.skl__h{display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem}
+.skl__h svg{width:20px;height:20px;flex:none;stroke:var(--accent);fill:none;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round}
+.skl__h h3{font-size:.82rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);font-weight:600}
+.skl__l{display:flex;flex-wrap:wrap;gap:.35rem}
+.skl__l span{font-size:.78rem;color:var(--ink-2);border:1px solid var(--line);
+  border-radius:2px;padding:.16rem .48rem;background:var(--paper)}
+
 /* ---------- about ---------- */
 .about__cols{display:grid;grid-template-columns:1fr minmax(0,270px);gap:clamp(1.6rem,4vw,3rem);align-items:start}
 @media(max-width:680px){.about__cols{grid-template-columns:1fr}}
@@ -295,6 +308,12 @@ main,footer{position:relative;z-index:1}
     <symbol id="g-chip" viewBox="0 0 48 48">
       <rect x="14" y="14" width="20" height="20" rx="3"/><path d="M20 6v8M28 6v8M20 34v8M28 34v8M6 20h8M6 28h8M34 20h8M34 28h8"/>
     </symbol>
+    <symbol id="g-term" viewBox="0 0 48 48">
+      <rect x="5" y="9" width="38" height="30" rx="4"/><path d="M13 20l6 5-6 5M25 30h10"/>
+    </symbol>
+    <symbol id="g-ctrl" viewBox="0 0 48 48">
+      <path d="M6 34c6 0 8-20 14-20s8 20 14 20 4-10 8-10"/><circle cx="6" cy="34" r="2.4"/><circle cx="42" cy="24" r="2.4"/>
+    </symbol>
   </defs></svg>
 
   <div class="bgfx__i keep" data-sp=".16" style="left:5%;top:12%;width:96px;height:96px"><svg><use href="#g-cam"/></svg></div>
@@ -315,6 +334,7 @@ main,footer{position:relative;z-index:1}
     <nav class="nav__links">
       <a href="#work">Work</a>
       <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
       <a class="btn" data-href="CV_PDF" download="Ahmed_Boubakry_CV.pdf">CV</a>
@@ -542,6 +562,58 @@ main,footer{position:relative;z-index:1}
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="skills">
+  <div class="wrap">
+    <div class="sec__head sec__head--c rv">
+      <h2>Skills</h2>
+      <p class="sec__sub">Tools and methods used in the work above, grouped by what they are for.</p>
+    </div>
+    <div class="skills__grid">
+
+      <div class="skl rv">
+        <div class="skl__h"><svg aria-hidden="true"><use href="#g-chip"/></svg><h3>Languages</h3></div>
+        <div class="skl__l"><span>Python</span><span>C++</span><span>MATLAB</span></div>
+      </div>
+
+      <div class="skl rv">
+        <div class="skl__h"><svg aria-hidden="true"><use href="#g-cam"/></svg><h3>Vision &amp; deep learning</h3></div>
+        <div class="skl__l"><span>PyTorch</span><span>OpenCV</span><span>MONAI</span><span>YOLO</span><span>Segment Anything 2</span><span>scikit-image</span></div>
+      </div>
+
+      <div class="skl rv">
+        <div class="skl__h"><svg aria-hidden="true"><use href="#g-bot"/></svg><h3>Robotics</h3></div>
+        <div class="skl__l"><span>ROS 2</span><span>Gazebo</span><span>Path planning</span><span>Motion control</span></div>
+      </div>
+
+      <div class="skl rv">
+        <div class="skl__h"><svg aria-hidden="true"><use href="#g-lidar"/></svg><h3>Sensing &amp; fusion</h3></div>
+        <div class="skl__l"><span>LiDAR</span><span>Stereo &amp; depth cameras</span><span>IMU</span><span>Kalman filtering</span><span>Camera calibration</span></div>
+      </div>
+
+      <div class="skl rv">
+        <div class="skl__h"><svg aria-hidden="true"><use href="#g-ctrl"/></svg><h3>Control &amp; estimation</h3></div>
+        <div class="skl__l"><span>Model-predictive control</span><span>CasADi</span><span>YALMIP</span><span>LQR</span><span>State estimation</span></div>
+      </div>
+
+      <div class="skl rv">
+        <div class="skl__h"><svg aria-hidden="true"><use href="#g-mesh"/></svg><h3>Simulation &amp; 3-D</h3></div>
+        <div class="skl__l"><span>Mitsuba 3</span><span>Open3D</span><span>Point clouds</span><span>Mesh reconstruction</span></div>
+      </div>
+
+      <div class="skl rv">
+        <div class="skl__h"><svg aria-hidden="true"><use href="#g-scan"/></svg><h3>Medical imaging</h3></div>
+        <div class="skl__l"><span>NiBabel</span><span>SynthSeg</span><span>3-D U-Net</span><span>NIfTI / DWI &amp; ADC</span></div>
+      </div>
+
+      <div class="skl rv">
+        <div class="skl__h"><svg aria-hidden="true"><use href="#g-term"/></svg><h3>Tooling</h3></div>
+        <div class="skl__l"><span>Git</span><span>Docker</span><span>Linux</span><span>Weights &amp; Biases</span></div>
+      </div>
+
     </div>
   </div>
 </section>
