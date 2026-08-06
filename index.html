@@ -8,8 +8,7 @@
 <meta property="og:type" content="website">
 <link rel="preload" as="font" type="font/woff2" href="assets/display.woff2" crossorigin>
 <title>Ahmed Boubakry | Robotics &amp; Computer Vision</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <style>
 @font-face{
   font-family:"Display";
@@ -87,6 +86,11 @@ img{max-width:100%;display:block}
 .btn--solid:hover,.btn--solid:focus-visible{background:var(--accent);border-color:var(--accent);color:var(--paper);filter:brightness(1.12)}
 .themebtn{border:1px solid var(--line);background:transparent;color:var(--ink-2);font:inherit;font-size:.8rem;padding:.35rem .6rem;border-radius:3px;cursor:pointer}
 .themebtn:hover{color:var(--ink);border-color:var(--ink-3)}
+
+
+.langbtn{border:1px solid var(--line);background:transparent;color:var(--ink-2);font:inherit;
+  font-size:.78rem;font-weight:600;letter-spacing:.04em;padding:.35rem .55rem;border-radius:3px;cursor:pointer}
+.langbtn:hover{color:var(--ink);border-color:var(--ink-3)}
 
 /* ---------- intro ---------- */
 .intro{padding-block:clamp(3.5rem,8vw,6rem) clamp(2.5rem,5vw,4rem)}
@@ -278,715 +282,669 @@ main,footer{position:relative;z-index:1}
 </head>
 <body>
 
-
-
-<div class="bgfx" id="bgfx" aria-hidden="true">
-  <svg width="0" height="0" style="position:absolute"><defs>
-    <symbol id="g-cam" viewBox="0 0 48 48">
-      <path d="M4 14h9l3-4h16l3 4h9v24H4z"/><circle cx="24" cy="26" r="8"/><circle cx="24" cy="26" r="3.4"/><path d="M38 19h4"/>
-    </symbol>
-    <symbol id="g-bot" viewBox="0 0 48 48">
-      <path d="M24 4v6"/><circle cx="24" cy="3" r="2"/><rect x="9" y="10" width="30" height="24" rx="6"/>
-      <circle cx="18" cy="21" r="3"/><circle cx="30" cy="21" r="3"/><path d="M18 28h12M14 34v8M34 34v8M4 20v8M44 20v8"/>
-    </symbol>
-    <symbol id="g-lidar" viewBox="0 0 48 48">
-      <circle cx="24" cy="24" r="3"/><path d="M24 14a10 10 0 0 1 10 10M24 8a16 16 0 0 1 16 16M24 34a10 10 0 0 1-10-10M24 40A16 16 0 0 1 8 24"/>
-    </symbol>
-    <symbol id="g-drone" viewBox="0 0 48 48">
-      <rect x="18" y="18" width="12" height="12" rx="3"/><path d="M18 18 9 9M30 18l9-9M18 30l-9 9M30 30l9 9"/>
-      <circle cx="8" cy="8" r="5"/><circle cx="40" cy="8" r="5"/><circle cx="8" cy="40" r="5"/><circle cx="40" cy="40" r="5"/>
-    </symbol>
-    <symbol id="g-wheel" viewBox="0 0 48 48">
-      <circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="7"/><path d="M24 6v11M24 31v11M6 24h11M31 24h11"/>
-    </symbol>
-    <symbol id="g-mesh" viewBox="0 0 48 48">
-      <path d="M24 6 6 18v18l18 8 18-8V18z"/><path d="M6 18l18 8 18-8M24 26v18M6 36l18-10 18 10"/>
-    </symbol>
-    <symbol id="g-scan" viewBox="0 0 48 48">
-      <path d="M6 16V8h8M42 16V8h-8M6 32v8h8M42 32v8h-8"/><ellipse cx="24" cy="24" rx="10" ry="12"/><path d="M20 20c3 3 5 3 8 0M22 30h4"/>
-    </symbol>
-    <symbol id="g-chip" viewBox="0 0 48 48">
-      <rect x="14" y="14" width="20" height="20" rx="3"/><path d="M20 6v8M28 6v8M20 34v8M28 34v8M6 20h8M6 28h8M34 20h8M34 28h8"/>
-    </symbol>
-    <symbol id="g-term" viewBox="0 0 48 48">
-      <rect x="5" y="9" width="38" height="30" rx="4"/><path d="M13 20l6 5-6 5M25 30h10"/>
-    </symbol>
-    <symbol id="g-ctrl" viewBox="0 0 48 48">
-      <path d="M6 34c6 0 8-20 14-20s8 20 14 20 4-10 8-10"/><circle cx="6" cy="34" r="2.4"/><circle cx="42" cy="24" r="2.4"/>
-    </symbol>
-  </defs></svg>
-
-  <div class="bgfx__i keep" data-sp=".16" style="left:5%;top:12%;width:96px;height:96px"><svg><use href="#g-cam"/></svg></div>
-  <div class="bgfx__i warm" data-sp=".28" style="left:82%;top:6%;width:76px;height:76px"><svg><use href="#g-drone"/></svg></div>
-  <div class="bgfx__i" data-sp=".10" style="left:70%;top:30%;width:120px;height:120px"><svg><use href="#g-lidar"/></svg></div>
-  <div class="bgfx__i keep" data-sp=".34" style="left:12%;top:52%;width:84px;height:84px"><svg><use href="#g-bot"/></svg></div>
-  <div class="bgfx__i" data-sp=".20" style="left:88%;top:64%;width:92px;height:92px"><svg><use href="#g-wheel"/></svg></div>
-  <div class="bgfx__i warm" data-sp=".13" style="left:34%;top:78%;width:78px;height:78px"><svg><use href="#g-mesh"/></svg></div>
-  <div class="bgfx__i" data-sp=".24" style="left:60%;top:92%;width:88px;height:88px"><svg><use href="#g-scan"/></svg></div>
-  <div class="bgfx__i" data-sp=".30" style="left:4%;top:86%;width:70px;height:70px"><svg><use href="#g-chip"/></svg></div>
-  <div class="bgfx__i warm keep" data-sp=".18" style="left:46%;top:22%;width:66px;height:66px"><svg><use href="#g-chip"/></svg></div>
-  <div class="bgfx__i" data-sp=".26" style="left:24%;top:36%;width:74px;height:74px"><svg><use href="#g-drone"/></svg></div>
+<div aria-hidden="true" class="bgfx" id="bgfx">
+<svg height="0" style="position:absolute" width="0"><defs>
+<symbol id="g-cam" viewBox="0 0 48 48">
+<path d="M4 14h9l3-4h16l3 4h9v24H4z"></path><circle cx="24" cy="26" r="8"></circle><circle cx="24" cy="26" r="3.4"></circle><path d="M38 19h4"></path>
+</symbol>
+<symbol id="g-bot" viewBox="0 0 48 48">
+<path d="M24 4v6"></path><circle cx="24" cy="3" r="2"></circle><rect height="24" rx="6" width="30" x="9" y="10"></rect>
+<circle cx="18" cy="21" r="3"></circle><circle cx="30" cy="21" r="3"></circle><path d="M18 28h12M14 34v8M34 34v8M4 20v8M44 20v8"></path>
+</symbol>
+<symbol id="g-lidar" viewBox="0 0 48 48">
+<circle cx="24" cy="24" r="3"></circle><path d="M24 14a10 10 0 0 1 10 10M24 8a16 16 0 0 1 16 16M24 34a10 10 0 0 1-10-10M24 40A16 16 0 0 1 8 24"></path>
+</symbol>
+<symbol id="g-drone" viewBox="0 0 48 48">
+<rect height="12" rx="3" width="12" x="18" y="18"></rect><path d="M18 18 9 9M30 18l9-9M18 30l-9 9M30 30l9 9"></path>
+<circle cx="8" cy="8" r="5"></circle><circle cx="40" cy="8" r="5"></circle><circle cx="8" cy="40" r="5"></circle><circle cx="40" cy="40" r="5"></circle>
+</symbol>
+<symbol id="g-wheel" viewBox="0 0 48 48">
+<circle cx="24" cy="24" r="18"></circle><circle cx="24" cy="24" r="7"></circle><path d="M24 6v11M24 31v11M6 24h11M31 24h11"></path>
+</symbol>
+<symbol id="g-mesh" viewBox="0 0 48 48">
+<path d="M24 6 6 18v18l18 8 18-8V18z"></path><path d="M6 18l18 8 18-8M24 26v18M6 36l18-10 18 10"></path>
+</symbol>
+<symbol id="g-scan" viewBox="0 0 48 48">
+<path d="M6 16V8h8M42 16V8h-8M6 32v8h8M42 32v8h-8"></path><ellipse cx="24" cy="24" rx="10" ry="12"></ellipse><path d="M20 20c3 3 5 3 8 0M22 30h4"></path>
+</symbol>
+<symbol id="g-chip" viewBox="0 0 48 48">
+<rect height="20" rx="3" width="20" x="14" y="14"></rect><path d="M20 6v8M28 6v8M20 34v8M28 34v8M6 20h8M6 28h8M34 20h8M34 28h8"></path>
+</symbol>
+<symbol id="g-term" viewBox="0 0 48 48">
+<rect height="30" rx="4" width="38" x="5" y="9"></rect><path d="M13 20l6 5-6 5M25 30h10"></path>
+</symbol>
+<symbol id="g-ctrl" viewBox="0 0 48 48">
+<path d="M6 34c6 0 8-20 14-20s8 20 14 20 4-10 8-10"></path><circle cx="6" cy="34" r="2.4"></circle><circle cx="42" cy="24" r="2.4"></circle>
+</symbol>
+</defs></svg>
+<div class="bgfx__i keep" data-sp=".16" style="left:5%;top:12%;width:96px;height:96px"><svg><use href="#g-cam"></use></svg></div>
+<div class="bgfx__i warm" data-sp=".28" style="left:82%;top:6%;width:76px;height:76px"><svg><use href="#g-drone"></use></svg></div>
+<div class="bgfx__i" data-sp=".10" style="left:70%;top:30%;width:120px;height:120px"><svg><use href="#g-lidar"></use></svg></div>
+<div class="bgfx__i keep" data-sp=".34" style="left:12%;top:52%;width:84px;height:84px"><svg><use href="#g-bot"></use></svg></div>
+<div class="bgfx__i" data-sp=".20" style="left:88%;top:64%;width:92px;height:92px"><svg><use href="#g-wheel"></use></svg></div>
+<div class="bgfx__i warm" data-sp=".13" style="left:34%;top:78%;width:78px;height:78px"><svg><use href="#g-mesh"></use></svg></div>
+<div class="bgfx__i" data-sp=".24" style="left:60%;top:92%;width:88px;height:88px"><svg><use href="#g-scan"></use></svg></div>
+<div class="bgfx__i" data-sp=".30" style="left:4%;top:86%;width:70px;height:70px"><svg><use href="#g-chip"></use></svg></div>
+<div class="bgfx__i warm keep" data-sp=".18" style="left:46%;top:22%;width:66px;height:66px"><svg><use href="#g-chip"></use></svg></div>
+<div class="bgfx__i" data-sp=".26" style="left:24%;top:36%;width:74px;height:74px"><svg><use href="#g-drone"></use></svg></div>
 </div>
-
 <header class="nav" id="nav">
-  <div class="wrap nav__in">
-    <a class="nav__name" href="#top">Ahmed&rsquo;s Portfolio</a>
-    <nav class="nav__links">
-      <a href="#work">Work</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a class="btn" data-href="CV_PDF" download="Ahmed_Boubakry_CV.pdf">CV</a>
-      <button class="themebtn" id="themebtn" type="button" aria-label="Switch colour theme">Theme</button>
-    </nav>
-  </div>
+<div class="wrap nav__in">
+<a class="nav__name" href="#top">Ahmed’s Portfolio</a>
+<nav class="nav__links">
+<a data-t="t001" href="#work">Work</a>
+<a data-t="t002" href="#experience">Experience</a>
+<a data-t="t003" href="#skills">Skills</a>
+<a data-t="t004" href="#about">About</a>
+<a data-t="t005" href="#contact">Contact</a>
+<a class="btn" data-href="CV_PDF" data-t="t006" download="Ahmed_Boubakry_CV.pdf">CV</a>
+<button class="langbtn" id="langbtn" type="button" aria-label="Changer de langue / Switch language">FR</button>
+      <button aria-label="Switch colour theme" class="themebtn" id="themebtn" type="button">Theme</button>
+</nav>
+</div>
 </header>
-
 <main id="top">
-
 <section class="intro">
-  <div class="wrap">
-    <div class="intro__top rv">
-      <div class="intro__txt">
-        <h1>Ahmed Boubakry</h1>
-        <p class="intro__role">Robotics and computer-vision engineer</p>
-        <p class="intro__sum">
+<div class="wrap">
+<div class="intro__top rv">
+<div class="intro__txt">
+<h1>Ahmed Boubakry</h1>
+<p class="intro__role" data-t="t007">Robotics and computer-vision engineer</p>
+<p class="intro__sum" data-t="t008">
           M.Sc. in Robotics from EPFL with a minor in Biomedical Technologies, currently researching
           perception for embodied agents at the MIT Camera Culture Lab. I work on detection, segmentation and sensor fusion for real-world autonomy,
           in PyTorch, C++ and ROS 2.
         </p>
-      </div>
-      <img class="intro__pic" src="assets/portrait.webp" alt="Ahmed Boubakry">
-    </div>
-    <div class="intro__act rv">
-      <a class="btn btn--solid" data-href="CV_PDF" download="Ahmed_Boubakry_CV.pdf">Download CV</a>
-      <a class="btn" href="mailto:ahmed.boubakry@epfl.ch"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.4 5.4A2.4 2.4 0 0 1 4.8 3h14.4a2.4 2.4 0 0 1 2.4 2.4v13.2a2.4 2.4 0 0 1-2.4 2.4H4.8a2.4 2.4 0 0 1-2.4-2.4V5.4Zm2.4-.6a.6.6 0 0 0-.6.6v.5l7.8 4.88 7.8-4.88v-.5a.6.6 0 0 0-.6-.6H4.8Zm15 3.19-7.28 4.55a1.2 1.2 0 0 1-1.24 0L4 7.99v10.59c0 .33.27.6.6.6h14.4a.6.6 0 0 0 .6-.6V7.99Z"/></svg>Email</a>
-      <a class="btn" href="https://www.linkedin.com/in/ahmed-boubakry">
-        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+</div>
+<img decoding="async" alt="Ahmed Boubakry" class="intro__pic" src="assets/portrait.webp"/>
+</div>
+<div class="intro__act rv">
+<a class="btn btn--solid" data-href="CV_PDF" data-t="t009" download="Ahmed_Boubakry_CV.pdf">Download CV</a>
+<a class="btn" data-t="t010" href="mailto:ahmed.boubakry@epfl.ch"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M2.4 5.4A2.4 2.4 0 0 1 4.8 3h14.4a2.4 2.4 0 0 1 2.4 2.4v13.2a2.4 2.4 0 0 1-2.4 2.4H4.8a2.4 2.4 0 0 1-2.4-2.4V5.4Zm2.4-.6a.6.6 0 0 0-.6.6v.5l7.8 4.88 7.8-4.88v-.5a.6.6 0 0 0-.6-.6H4.8Zm15 3.19-7.28 4.55a1.2 1.2 0 0 1-1.24 0L4 7.99v10.59c0 .33.27.6.6.6h14.4a.6.6 0 0 0 .6-.6V7.99Z"></path></svg>Email</a>
+<a class="btn" data-t="t011" href="https://www.linkedin.com/in/ahmed-boubakry">
+<svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"></path></svg>
         LinkedIn</a>
-      <a class="btn" href="https://github.com/Ahmedamyx">
-        <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+<a class="btn" data-t="t012" href="https://github.com/Ahmedamyx">
+<svg aria-hidden="true" class="ico" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
         GitHub</a>
-    </div>
-    <div class="affil rv">
-      <div class="affil__i">
-        <img loading="lazy" decoding="async" src="assets/logo_mit.png" alt="MIT">
-        <span class="affil__t"><b>MIT Camera Culture Lab</b><span>Visiting student, Cambridge MA</span></span>
-      </div>
-      <div class="affil__i">
-        <img loading="lazy" decoding="async" class="epfl" src="assets/logo_epfl.svg" alt="EPFL">
-        <span class="affil__t"><b>EPFL</b><span>M.Sc., Lausanne, Switzerland</span></span>
-      </div>
-    </div>
-  </div>
+</div>
+<div class="affil rv">
+<div class="affil__i">
+<img loading="lazy" decoding="async" alt="MIT" src="assets/logo_mit.png"/>
+<span class="affil__t"><b data-t="t013">MIT Camera Culture Lab</b><span data-t="t015">Visiting student, Cambridge MA</span></span>
+</div>
+<div class="affil__i">
+<img loading="lazy" decoding="async" alt="EPFL" class="epfl" src="assets/logo_epfl.svg"/>
+<span class="affil__t"><b data-t="t014">EPFL</b><span data-t="t016">M.Sc., Lausanne, Switzerland</span></span>
+</div>
+</div>
+</div>
 </section>
-
 <section class="sec" id="work">
-  <div class="wrap">
-    <div class="sec__head sec__head--c rv">
-      <h2>Selected work</h2>
-      <p class="sec__sub">Eight projects across computational imaging, medical image analysis, control and mobile robotics. Open any one for what was built, where it was difficult and how it turned out.</p>
-    </div>
-    <div class="grid">
-
-      <article class="proj rv" tabindex="0" role="button" data-detail="autoci" aria-label="AutoCI, open details">
-        <div class="proj__img"><img loading="lazy" decoding="async" src="assets/autoci_cover.webp" alt="A rendered interior with the camera viewpoints the agent selected drawn as coloured frusta"></div>
-        <div class="proj__in">
-          <div class="proj__meta"><span class="proj__yr">2026</span><i></i><span>MIT Camera Culture Lab</span><i></i><span class="proj__kind">Master's thesis</span></div>
-          <h3>AutoCI</h3>
-          <p>Two LLM agents design a complete imaging system for a task, sensing modality through reconstruction, and every design is validated on scenes it never saw.</p>
-          <p class="proj__res">95.6% grasping, 90.8% localization</p>
-          <div class="proj__tags"><span class="tag">Python</span><span class="tag">Mitsuba 3</span><span class="tag">LLM agents</span><span class="tag">Deep learning</span><span class="tag">Depth estimation</span><span class="tag">3-D reconstruction</span><span class="tag">Harness engineering</span></div>
-          <div class="proj__more">Read more, with 3-D comparison</div>
-        </div>
-      </article>
-
-      <article class="proj rv" tabindex="0" role="button" data-detail="road" aria-label="Road segmentation, open details">
-        <div class="proj__img">
-          <img loading="lazy" decoding="async" src="assets/road.webp" alt="Aerial drone frame of an urban intersection with the road surface segmented in blue">
-          <img loading="lazy" decoding="async" class="anim" data-src="ROAD_ANIM" alt="">
-          <span class="proj__play">Hover to play</span>
-        </div>
-        <div class="proj__in">
-          <div class="proj__meta"><span class="proj__yr">2025</span><i></i><span>EPFL LUTS</span><i></i><span class="proj__kind">Semester project</span></div>
-          <h3>Road segmentation from drone video</h3>
-          <p>Segment Anything 2, fine-tuned to segment roads under vehicle occlusion across a full aerial video.</p>
-          <p class="proj__res">83.2% detection in obstructed scenes</p>
-          <div class="proj__tags"><span class="tag">SAM 2</span><span class="tag">PyTorch</span><span class="tag">OpenCV</span></div>
-          <div class="proj__more">Read more</div>
-        </div>
-      </article>
-
-      <article class="proj rv" tabindex="0" role="button" data-detail="lesion" aria-label="Stroke lesion segmentation, open details">
-        <div class="proj__img"><img loading="lazy" decoding="async" data-src="LESION" alt="Two brain MRI views with predicted stroke lesions marked in red"></div>
-        <div class="proj__in">
-          <div class="proj__meta"><span class="proj__yr">2026</span><i></i><span>EPFL LTS5</span><i></i><span class="proj__kind">Semester project</span></div>
-          <h3>Synthetic stroke lesion segmentation</h3>
-          <p>Simulated stroke lesions on healthy brain MRI to train a segmentation network without scarce expert annotation.</p>
-          <p class="proj__res">0.85 Dice, from a 0.73 baseline</p>
-          <div class="proj__tags"><span class="tag">PyTorch</span><span class="tag">MONAI</span><span class="tag">Medical imaging</span></div>
-          <div class="proj__more">Read more</div>
-        </div>
-      </article>
-
-      <article class="proj rv" tabindex="0" role="button" data-detail="rover" aria-label="Rover sensor fusion, open details">
-        <div class="proj__img"><img loading="lazy" decoding="async" data-src="ROVER" alt="The EPFL Xplore Mars rover"></div>
-        <div class="proj__in">
-          <div class="proj__meta"><span class="proj__yr">2023</span><i></i><span>EPFL Xplore</span><i></i><span class="proj__kind">Extracurricular</span></div>
-          <h3>Rover sensor fusion</h3>
-          <p>Fused RGB and lidar for object detection on a Mars rover, sharpening accuracy up close and extending range further out.</p>
-          <p class="proj__res">Top-10, European Rover Challenge</p>
-          <div class="proj__tags"><span class="tag">ROS 2</span><span class="tag">Sensor fusion</span><span class="tag">Lidar</span><span class="tag">C++</span></div>
-          <div class="proj__more">Read more</div>
-        </div>
-      </article>
-
-      <article class="proj rv" tabindex="0" role="button" data-detail="evo" aria-label="Evolutionary robotics, open details">
-        <div class="proj__img">
-          <img loading="lazy" decoding="async" src="assets/evo_poster.webp" alt="A simulated modular robot on stepped terrain">
-          <img loading="lazy" decoding="async" class="anim" data-src="EVO_ANIM" alt="">
-          <span class="proj__play">Hover to play</span>
-        </div>
-        <div class="proj__in">
-          <div class="proj__meta"><span class="proj__yr">2022</span><i></i><span>EPFL MICRO-515</span><i></i><span class="proj__kind">Course project</span></div>
-          <h3>Evolutionary robotics</h3>
-          <p>Evolved a modular robot's shape and controller together in simulation, then built the winner in hardware.</p>
-          <div class="proj__tags"><span class="tag">Python</span><span class="tag">Evolutionary algorithms</span><span class="tag">Simulation</span></div>
-          <div class="proj__more">Read more</div>
-        </div>
-      </article>
-
-      <article class="proj rv" tabindex="0" role="button" data-detail="mpc" aria-label="Rocket model-predictive control, open details">
-        <div class="proj__img"><img loading="lazy" decoding="async" src="assets/mpc.webp" alt="Closed-loop control plots of a thrust-vectored rocket tracking a three-dimensional path"></div>
-        <div class="proj__in">
-          <div class="proj__meta"><span class="proj__yr">2024</span><i></i><span>EPFL ME-425</span><i></i><span class="proj__kind">Course project</span></div>
-          <h3>Rocket model-predictive control</h3>
-          <p>Constrained MPC for a thrust-vectored rocket, up to a nonlinear controller that stays stable under actuator delay.</p>
-          <div class="proj__tags"><span class="tag">MATLAB</span><span class="tag">YALMIP</span><span class="tag">CasADi</span></div>
-          <div class="proj__more">Read more</div>
-        </div>
-      </article>
-
-      <article class="proj rv" tabindex="0" role="button" data-detail="bomr" aria-label="Mobile robot navigation, open details">
-        <div class="proj__img"><img loading="lazy" decoding="async" src="assets/bomr.webp" alt="Overhead view of an arena with the visibility graph drawn between obstacle corners, robot and goal"></div>
-        <div class="proj__in">
-          <div class="proj__meta"><span class="proj__yr">2024</span><i></i><span>EPFL MICRO-452</span><i></i><span class="proj__kind">Course project</span></div>
-          <h3>Autonomous mobile robot navigation</h3>
-          <p>Overhead-camera vision, visibility-graph planning and a Kalman filter that keeps localising when the camera view is lost.</p>
-          <div class="proj__tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Visibility graph</span><span class="tag">Dijkstra</span><span class="tag">Extended Kalman filter</span><span class="tag">Motion control</span><span class="tag">Sensor fusion</span></div>
-          <div class="proj__more">Read more</div>
-        </div>
-      </article>
-
-      <article class="proj rv" tabindex="0" role="button" data-detail="uno" aria-label="Card detection, open details">
-        <div class="proj__img"><img loading="lazy" decoding="async" src="assets/uno.webp" alt="Playing cards spread across a leaf-patterned cloth, each outlined by the segmentation stage"></div>
-        <div class="proj__in">
-          <div class="proj__meta"><span class="proj__yr">2026</span><i></i><span>EPFL</span><i></i><span class="proj__kind">Course project</span></div>
-          <h3>Card detection and classification</h3>
-          <p>A YOLO detector trained on a hand-annotated dataset to recognise playing cards in live games.</p>
-          <div class="proj__tags"><span class="tag">Python</span><span class="tag">YOLO</span><span class="tag">OpenCV</span></div>
-          <div class="proj__more">Read more</div>
-        </div>
-      </article>
-
-    </div>
-  </div>
+<div class="wrap">
+<div class="sec__head sec__head--c rv">
+<h2 data-t="t017">Selected work</h2>
+<p class="sec__sub" data-t="t021">Eight projects across computational imaging, medical image analysis, control and mobile robotics. Open any one for what was built, where it was difficult and how it turned out.</p>
+</div>
+<div class="grid">
+<article aria-label="AutoCI, open details" class="proj rv" data-detail="autoci" role="button" tabindex="0">
+<div class="proj__img"><img loading="lazy" decoding="async" alt="A rendered interior with the camera viewpoints the agent selected drawn as coloured frusta" src="assets/autoci_cover.webp"/></div>
+<div class="proj__in">
+<div class="proj__meta"><span class="proj__yr">2026</span><i></i><span>MIT Camera Culture Lab</span><i></i><span class="proj__kind" data-t="t079">Master's thesis</span></div>
+<h3 data-t="t051">AutoCI</h3>
+<p data-t="t059">Two LLM agents design a complete imaging system for a task, sensing modality through reconstruction, and every design is validated on scenes it never saw.</p>
+<p class="proj__res" data-t="t060">95.6% grasping, 90.8% localization</p>
+<div class="proj__tags"><span class="tag">Python</span><span class="tag">Mitsuba 3</span><span class="tag">LLM agents</span><span class="tag">Deep learning</span><span class="tag">Depth estimation</span><span class="tag">3-D reconstruction</span><span class="tag">Harness engineering</span></div>
+<div class="proj__more" data-t="t071">Read more, with 3-D comparison</div>
+</div>
+</article>
+<article aria-label="Road segmentation, open details" class="proj rv" data-detail="road" role="button" tabindex="0">
+<div class="proj__img">
+<img loading="lazy" decoding="async" alt="Aerial drone frame of an urban intersection with the road surface segmented in blue" src="assets/road.webp"/>
+<img loading="lazy" decoding="async" alt="" class="anim" data-src="ROAD_ANIM"/>
+<span class="proj__play">Hover to play</span>
+</div>
+<div class="proj__in">
+<div class="proj__meta"><span class="proj__yr">2025</span><i></i><span>EPFL LUTS</span><i></i><span class="proj__kind" data-t="t080">Semester project</span></div>
+<h3 data-t="t052">Road segmentation from drone video</h3>
+<p data-t="t061">Segment Anything 2, fine-tuned to segment roads under vehicle occlusion across a full aerial video.</p>
+<p class="proj__res" data-t="t062">83.2% detection in obstructed scenes</p>
+<div class="proj__tags"><span class="tag">SAM 2</span><span class="tag">PyTorch</span><span class="tag">OpenCV</span></div>
+<div class="proj__more" data-t="t072">Read more</div>
+</div>
+</article>
+<article aria-label="Stroke lesion segmentation, open details" class="proj rv" data-detail="lesion" role="button" tabindex="0">
+<div class="proj__img"><img loading="lazy" decoding="async" alt="Two brain MRI views with predicted stroke lesions marked in red" data-src="LESION"/></div>
+<div class="proj__in">
+<div class="proj__meta"><span class="proj__yr">2026</span><i></i><span>EPFL LTS5</span><i></i><span class="proj__kind" data-t="t081">Semester project</span></div>
+<h3 data-t="t053">Synthetic stroke lesion segmentation</h3>
+<p data-t="t063">Simulated stroke lesions on healthy brain MRI to train a segmentation network without scarce expert annotation.</p>
+<p class="proj__res" data-t="t064">0.85 Dice, from a 0.73 baseline</p>
+<div class="proj__tags"><span class="tag">PyTorch</span><span class="tag">MONAI</span><span class="tag">Medical imaging</span></div>
+<div class="proj__more" data-t="t073">Read more</div>
+</div>
+</article>
+<article aria-label="Rover sensor fusion, open details" class="proj rv" data-detail="rover" role="button" tabindex="0">
+<div class="proj__img"><img loading="lazy" decoding="async" alt="The EPFL Xplore Mars rover" data-src="ROVER"/></div>
+<div class="proj__in">
+<div class="proj__meta"><span class="proj__yr">2023</span><i></i><span>EPFL Xplore</span><i></i><span class="proj__kind" data-t="t082">Extracurricular</span></div>
+<h3 data-t="t054">Rover sensor fusion</h3>
+<p data-t="t065">Fused RGB and lidar for object detection on a Mars rover, sharpening accuracy up close and extending range further out.</p>
+<p class="proj__res" data-t="t066">Top-10, European Rover Challenge</p>
+<div class="proj__tags"><span class="tag">ROS 2</span><span class="tag">Sensor fusion</span><span class="tag">Lidar</span><span class="tag">C++</span></div>
+<div class="proj__more" data-t="t074">Read more</div>
+</div>
+</article>
+<article aria-label="Evolutionary robotics, open details" class="proj rv" data-detail="evo" role="button" tabindex="0">
+<div class="proj__img">
+<img loading="lazy" decoding="async" alt="A simulated modular robot on stepped terrain" src="assets/evo_poster.webp"/>
+<img loading="lazy" decoding="async" alt="" class="anim" data-src="EVO_ANIM"/>
+<span class="proj__play">Hover to play</span>
+</div>
+<div class="proj__in">
+<div class="proj__meta"><span class="proj__yr">2022</span><i></i><span>EPFL MICRO-515</span><i></i><span class="proj__kind" data-t="t083">Course project</span></div>
+<h3 data-t="t055">Evolutionary robotics</h3>
+<p data-t="t067">Evolved a modular robot's shape and controller together in simulation, then built the winner in hardware.</p>
+<div class="proj__tags"><span class="tag">Python</span><span class="tag">Evolutionary algorithms</span><span class="tag">Simulation</span></div>
+<div class="proj__more" data-t="t075">Read more</div>
+</div>
+</article>
+<article aria-label="Rocket model-predictive control, open details" class="proj rv" data-detail="mpc" role="button" tabindex="0">
+<div class="proj__img"><img loading="lazy" decoding="async" alt="Closed-loop control plots of a thrust-vectored rocket tracking a three-dimensional path" src="assets/mpc.webp"/></div>
+<div class="proj__in">
+<div class="proj__meta"><span class="proj__yr">2024</span><i></i><span>EPFL ME-425</span><i></i><span class="proj__kind" data-t="t084">Course project</span></div>
+<h3 data-t="t056">Rocket model-predictive control</h3>
+<p data-t="t068">Constrained MPC for a thrust-vectored rocket, up to a nonlinear controller that stays stable under actuator delay.</p>
+<div class="proj__tags"><span class="tag">MATLAB</span><span class="tag">YALMIP</span><span class="tag">CasADi</span></div>
+<div class="proj__more" data-t="t076">Read more</div>
+</div>
+</article>
+<article aria-label="Mobile robot navigation, open details" class="proj rv" data-detail="bomr" role="button" tabindex="0">
+<div class="proj__img"><img loading="lazy" decoding="async" alt="Overhead view of an arena with the visibility graph drawn between obstacle corners, robot and goal" src="assets/bomr.webp"/></div>
+<div class="proj__in">
+<div class="proj__meta"><span class="proj__yr">2024</span><i></i><span>EPFL MICRO-452</span><i></i><span class="proj__kind" data-t="t085">Course project</span></div>
+<h3 data-t="t057">Autonomous mobile robot navigation</h3>
+<p data-t="t069">Overhead-camera vision, visibility-graph planning and a Kalman filter that keeps localising when the camera view is lost.</p>
+<div class="proj__tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Visibility graph</span><span class="tag">Dijkstra</span><span class="tag">Extended Kalman filter</span><span class="tag">Motion control</span><span class="tag">Sensor fusion</span></div>
+<div class="proj__more" data-t="t077">Read more</div>
+</div>
+</article>
+<article aria-label="Card detection, open details" class="proj rv" data-detail="uno" role="button" tabindex="0">
+<div class="proj__img"><img loading="lazy" decoding="async" alt="Playing cards spread across a leaf-patterned cloth, each outlined by the segmentation stage" src="assets/uno.webp"/></div>
+<div class="proj__in">
+<div class="proj__meta"><span class="proj__yr">2026</span><i></i><span>EPFL</span><i></i><span class="proj__kind" data-t="t086">Course project</span></div>
+<h3 data-t="t058">Card detection and classification</h3>
+<p data-t="t070">A YOLO detector trained on a hand-annotated dataset to recognise playing cards in live games.</p>
+<div class="proj__tags"><span class="tag">Python</span><span class="tag">YOLO</span><span class="tag">OpenCV</span></div>
+<div class="proj__more" data-t="t078">Read more</div>
+</div>
+</article>
+</div>
+</div>
 </section>
-
 <section class="sec sec--tint" id="experience">
-  <div class="wrap">
-    <div class="sec__head sec__head--c rv">
-      <h2>Experience and research</h2>
-      <p class="sec__sub">Research and industry positions in computer vision, perception and robotics, from imaging-system design at MIT to autonomous inspection in industry and medical image analysis at EPFL.</p>
-    </div>
-    <div class="xp">
-      <div class="xp__row rv">
-        <div class="xp__when">2026, until Sept.</div>
-        <div>
-          <div class="xp__title">Visiting Student</div>
-          <div class="xp__org"><img loading="lazy" decoding="async" class="xp__mark" src="assets/logo_mit.png" alt=""><span><b>MIT Camera Culture Lab</b>, Cambridge MA</span></div>
-          <ul>
-            <li>Built <b>AutoCI</b>, an agentic system that designs task-specific imaging systems end to end, choosing sensing modality, optics and perception algorithm through a propose-and-validate loop between two LLM agents.</li>
-            <li>Cut search cost by executing each proposed pipeline rather than retraining one per candidate.</li>
-            <li>95.6% on robotic grasping and 90.8% on localization in cluttered scenes.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="xp__row rv">
-        <div class="xp__when">2025, 6 mos</div>
-        <div>
-          <div class="xp__title">Computer Vision Engineer, Intern</div>
-          <div class="xp__org"><img loading="lazy" decoding="async" class="xp__mark xp__mark--mich" src="assets/logo_michelin.svg" alt=""><span><b>Michelin Recherche et Technique</b>, Givisiez, Switzerland</span></div>
-          <ul><li>Computer vision for a robot that navigates to vehicles and inspects their wheels: wheel detection, defect detection and weight estimation from onboard sensing.</li></ul>
-        </div>
-      </div>
-      <div class="xp__row rv">
-        <div class="xp__when">2025 to 2026, 4 mos</div>
-        <div>
-          <div class="xp__title">Stroke Lesion Segmentation Semester Project</div>
-          <div class="xp__org"><img loading="lazy" decoding="async" class="xp__mark xp__mark--epfl" src="assets/logo_epfl.svg" alt=""><span><b>LTS5, EPFL Signal Processing Laboratory 5</b>, Lausanne</span></div>
-          <ul>
-            <li>Synthetic lesion simulation and deep-learning segmentation on Human Connectome Project MRI. Raised accuracy by around 10% by augmenting scarce annotations. Graded 5.75/6.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="xp__row rv">
-        <div class="xp__when">2024 to 2025, 4 mos</div>
-        <div>
-          <div class="xp__title">Computer Vision Semester Project</div>
-          <div class="xp__org"><img loading="lazy" decoding="async" class="xp__mark xp__mark--epfl" src="assets/logo_epfl.svg" alt=""><span><b>LUTS, EPFL Urban Transport Systems Lab</b>, Lausanne</span></div>
-          <ul>
-            <li>Segmented roads and occlusions from drone video with Segment Anything 2, reaching 83.2% detection accuracy in obstructed scenes. Graded 6/6.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="xp__row rv">
-        <div class="xp__when">2023 to 2024, 8 mos</div>
-        <div>
-          <div class="xp__title">Rover Navigation</div>
-          <div class="xp__org"><img loading="lazy" decoding="async" class="xp__mark xp__mark--epfl" src="assets/logo_epfl.svg" alt=""><span><b>EPFL Xplore</b>, Lausanne</span></div>
-          <ul>
-            <li>LiDAR and depth-camera fusion that extended detection range and improved localization, contributing to a top-10 finish at the European Rover Challenge.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="xp__row rv">
-        <div class="xp__when">2021 to 2025</div>
-        <div>
-          <div class="xp__title">Teaching Assistant</div>
-          <div class="xp__org"><img loading="lazy" decoding="async" class="xp__mark xp__mark--epfl" src="assets/logo_epfl.svg" alt=""><span><b>EPFL</b>, Lausanne</span></div>
-          <ul>
-            <li>Linear Algebra, Analysis I and II and Advanced Analysis: ran exercise sessions, graded coursework and exams, and proctored examinations. Evening tutor at the Centre Propedeutique.</li>
-            <li>Basics of Mobile Robotics (MICRO-452), 2024: graded student projects and exercises and supported teams through the term.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="sec__head sec__head--c rv">
+<h2 data-t="t018">Experience and research</h2>
+<p class="sec__sub" data-t="t022">Research and industry positions in computer vision, perception and robotics, from imaging-system design at MIT to autonomous inspection in industry and medical image analysis at EPFL.</p>
+</div>
+<div class="xp">
+<div class="xp__row rv">
+<div class="xp__when" data-t="t024">2026, until Sept.</div>
+<div>
+<div class="xp__title" data-t="t030">Visiting Student</div>
+<div class="xp__org"><img loading="lazy" decoding="async" alt="" class="xp__mark" src="assets/logo_mit.png"/><span data-t="t036"><b>MIT Camera Culture Lab</b>, Cambridge MA</span></div>
+<ul>
+<li data-t="t042">Built <b>AutoCI</b>, an agentic system that designs task-specific imaging systems end to end, choosing sensing modality, optics and perception algorithm through a propose-and-validate loop between two LLM agents.</li>
+<li data-t="t043">Cut search cost by executing each proposed pipeline rather than retraining one per candidate.</li>
+<li data-t="t044">95.6% on robotic grasping and 90.8% on localization in cluttered scenes.</li>
+</ul>
+</div>
+</div>
+<div class="xp__row rv">
+<div class="xp__when" data-t="t025">2025, 6 mos</div>
+<div>
+<div class="xp__title" data-t="t031">Computer Vision Engineer, Intern</div>
+<div class="xp__org"><img loading="lazy" decoding="async" alt="" class="xp__mark xp__mark--mich" src="assets/logo_michelin.svg"/><span data-t="t037"><b>Michelin Recherche et Technique</b>, Givisiez, Switzerland</span></div>
+<ul><li data-t="t045">Computer vision for a robot that navigates to vehicles and inspects their wheels: wheel detection, defect detection and weight estimation from onboard sensing.</li></ul>
+</div>
+</div>
+<div class="xp__row rv">
+<div class="xp__when" data-t="t026">2025 to 2026, 4 mos</div>
+<div>
+<div class="xp__title" data-t="t032">Stroke Lesion Segmentation Semester Project</div>
+<div class="xp__org"><img loading="lazy" decoding="async" alt="" class="xp__mark xp__mark--epfl" src="assets/logo_epfl.svg"/><span data-t="t038"><b>LTS5, EPFL Signal Processing Laboratory 5</b>, Lausanne</span></div>
+<ul>
+<li data-t="t046">Synthetic lesion simulation and deep-learning segmentation on Human Connectome Project MRI. Raised accuracy by around 10% by augmenting scarce annotations. Graded 5.75/6.</li>
+</ul>
+</div>
+</div>
+<div class="xp__row rv">
+<div class="xp__when" data-t="t027">2024 to 2025, 4 mos</div>
+<div>
+<div class="xp__title" data-t="t033">Computer Vision Semester Project</div>
+<div class="xp__org"><img loading="lazy" decoding="async" alt="" class="xp__mark xp__mark--epfl" src="assets/logo_epfl.svg"/><span data-t="t039"><b>LUTS, EPFL Urban Transport Systems Lab</b>, Lausanne</span></div>
+<ul>
+<li data-t="t047">Segmented roads and occlusions from drone video with Segment Anything 2, reaching 83.2% detection accuracy in obstructed scenes. Graded 6/6.</li>
+</ul>
+</div>
+</div>
+<div class="xp__row rv">
+<div class="xp__when" data-t="t028">2023 to 2024, 8 mos</div>
+<div>
+<div class="xp__title" data-t="t034">Rover Navigation</div>
+<div class="xp__org"><img loading="lazy" decoding="async" alt="" class="xp__mark xp__mark--epfl" src="assets/logo_epfl.svg"/><span data-t="t040"><b>EPFL Xplore</b>, Lausanne</span></div>
+<ul>
+<li data-t="t048">LiDAR and depth-camera fusion that extended detection range and improved localization, contributing to a top-10 finish at the European Rover Challenge.</li>
+</ul>
+</div>
+</div>
+<div class="xp__row rv">
+<div class="xp__when" data-t="t029">2021 to 2025</div>
+<div>
+<div class="xp__title" data-t="t035">Teaching Assistant</div>
+<div class="xp__org"><img loading="lazy" decoding="async" alt="" class="xp__mark xp__mark--epfl" src="assets/logo_epfl.svg"/><span data-t="t041"><b>EPFL</b>, Lausanne</span></div>
+<ul>
+<li data-t="t049">Linear Algebra, Analysis I and II and Advanced Analysis: ran exercise sessions, graded coursework and exams, and proctored examinations. Evening tutor at the Centre Propedeutique.</li>
+<li data-t="t050">Basics of Mobile Robotics (MICRO-452), 2024: graded student projects and exercises and supported teams through the term.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <section class="sec" id="skills">
-  <div class="wrap">
-    <div class="sec__head sec__head--c rv">
-      <h2>Skills</h2>
-      <p class="sec__sub">Tools and methods used in the work above, grouped by what they are for.</p>
-    </div>
-    <div class="skills__grid">
-
-      <div class="skl rv">
-        <div class="skl__h"><svg aria-hidden="true"><use href="#g-chip"/></svg><h3>Languages</h3></div>
-        <div class="skl__l"><span>Python</span><span>C++</span><span>MATLAB</span></div>
-      </div>
-
-      <div class="skl rv">
-        <div class="skl__h"><svg aria-hidden="true"><use href="#g-cam"/></svg><h3>Vision &amp; deep learning</h3></div>
-        <div class="skl__l"><span>PyTorch</span><span>OpenCV</span><span>MONAI</span><span>YOLO</span><span>Segment Anything 2</span><span>scikit-image</span></div>
-      </div>
-
-      <div class="skl rv">
-        <div class="skl__h"><svg aria-hidden="true"><use href="#g-bot"/></svg><h3>Robotics</h3></div>
-        <div class="skl__l"><span>ROS 2</span><span>Gazebo</span><span>Path planning</span><span>Motion control</span></div>
-      </div>
-
-      <div class="skl rv">
-        <div class="skl__h"><svg aria-hidden="true"><use href="#g-lidar"/></svg><h3>Sensing &amp; fusion</h3></div>
-        <div class="skl__l"><span>LiDAR</span><span>Stereo &amp; depth cameras</span><span>IMU</span><span>Kalman filtering</span><span>Camera calibration</span></div>
-      </div>
-
-      <div class="skl rv">
-        <div class="skl__h"><svg aria-hidden="true"><use href="#g-ctrl"/></svg><h3>Control &amp; estimation</h3></div>
-        <div class="skl__l"><span>Model-predictive control</span><span>CasADi</span><span>YALMIP</span><span>LQR</span><span>State estimation</span></div>
-      </div>
-
-      <div class="skl rv">
-        <div class="skl__h"><svg aria-hidden="true"><use href="#g-mesh"/></svg><h3>Simulation &amp; 3-D</h3></div>
-        <div class="skl__l"><span>Mitsuba 3</span><span>Open3D</span><span>Point clouds</span><span>Mesh reconstruction</span></div>
-      </div>
-
-      <div class="skl rv">
-        <div class="skl__h"><svg aria-hidden="true"><use href="#g-scan"/></svg><h3>Medical imaging</h3></div>
-        <div class="skl__l"><span>NiBabel</span><span>SynthSeg</span><span>3-D U-Net</span><span>NIfTI / DWI &amp; ADC</span></div>
-      </div>
-
-      <div class="skl rv">
-        <div class="skl__h"><svg aria-hidden="true"><use href="#g-term"/></svg><h3>Tooling</h3></div>
-        <div class="skl__l"><span>Git</span><span>Docker</span><span>Linux</span><span>Weights &amp; Biases</span></div>
-      </div>
-
-    </div>
-  </div>
+<div class="wrap">
+<div class="sec__head sec__head--c rv">
+<h2 data-t="t019">Skills</h2>
+<p class="sec__sub" data-t="t023">Tools and methods used in the work above, grouped by what they are for.</p>
+</div>
+<div class="skills__grid">
+<div class="skl rv">
+<div class="skl__h"><svg aria-hidden="true"><use href="#g-chip"></use></svg><h3 data-t="t087">Languages</h3></div>
+<div class="skl__l"><span>Python</span><span>C++</span><span>MATLAB</span></div>
+</div>
+<div class="skl rv">
+<div class="skl__h"><svg aria-hidden="true"><use href="#g-cam"></use></svg><h3 data-t="t088">Vision &amp; deep learning</h3></div>
+<div class="skl__l"><span>PyTorch</span><span>OpenCV</span><span>MONAI</span><span>YOLO</span><span>Segment Anything 2</span><span>scikit-image</span></div>
+</div>
+<div class="skl rv">
+<div class="skl__h"><svg aria-hidden="true"><use href="#g-bot"></use></svg><h3 data-t="t089">Robotics</h3></div>
+<div class="skl__l"><span>ROS 2</span><span>Gazebo</span><span>Path planning</span><span>Motion control</span></div>
+</div>
+<div class="skl rv">
+<div class="skl__h"><svg aria-hidden="true"><use href="#g-lidar"></use></svg><h3 data-t="t090">Sensing &amp; fusion</h3></div>
+<div class="skl__l"><span>LiDAR</span><span>Stereo &amp; depth cameras</span><span>IMU</span><span>Kalman filtering</span><span>Camera calibration</span></div>
+</div>
+<div class="skl rv">
+<div class="skl__h"><svg aria-hidden="true"><use href="#g-ctrl"></use></svg><h3 data-t="t091">Control &amp; estimation</h3></div>
+<div class="skl__l"><span>Model-predictive control</span><span>CasADi</span><span>YALMIP</span><span>LQR</span><span>State estimation</span></div>
+</div>
+<div class="skl rv">
+<div class="skl__h"><svg aria-hidden="true"><use href="#g-mesh"></use></svg><h3 data-t="t092">Simulation &amp; 3-D</h3></div>
+<div class="skl__l"><span>Mitsuba 3</span><span>Open3D</span><span>Point clouds</span><span>Mesh reconstruction</span></div>
+</div>
+<div class="skl rv">
+<div class="skl__h"><svg aria-hidden="true"><use href="#g-scan"></use></svg><h3 data-t="t093">Medical imaging</h3></div>
+<div class="skl__l"><span>NiBabel</span><span>SynthSeg</span><span>3-D U-Net</span><span>NIfTI / DWI &amp; ADC</span></div>
+</div>
+<div class="skl rv">
+<div class="skl__h"><svg aria-hidden="true"><use href="#g-term"></use></svg><h3 data-t="t094">Tooling</h3></div>
+<div class="skl__l"><span>Git</span><span>Docker</span><span>Linux</span><span>Weights &amp; Biases</span></div>
+</div>
+</div>
+</div>
 </section>
-
 <section class="sec about sec--tint" id="about">
-  <div class="wrap">
-    <div class="sec__head rv"><h2>Away from the screen</h2></div>
-    <div class="about__cols">
-      <div class="rv">
-        <p>
+<div class="wrap">
+<div class="sec__head rv"><h2 data-t="t020">Away from the screen</h2></div>
+<div class="about__cols">
+<div class="rv">
+<p>
           I travel to see how other people live. So far France, Morocco, Spain, South Korea, the
           United States and Japan, the last of these twice: once with my section at EPFL and once
           with friends.
         </p>
-        <p>
+<p>
           Football is a hobby of mine and I play regularly. Team sport keeps up the habits that
           matter just as much on an engineering team: communicating quickly under pressure,
           covering for someone when a plan falls apart, and treating the result as collective
           rather than individual. I also play video games.
         </p>
-        <div class="about__list">
-          <span class="tag">France</span>
-          <span class="tag">Morocco</span>
-          <span class="tag">Spain</span>
-          <span class="tag">South Korea</span>
-          <span class="tag">United States</span>
-          <span class="tag">Japan</span>
-        </div>
-      </div>
-      <div class="about__ph rv">
-        <figure>
-          <img loading="lazy" decoding="async" src="assets/fuji.webp" alt="Ahmed Boubakry with Mount Fuji in the background on a clear day">
-          <figcaption>Mount Fuji, Japan.</figcaption>
-        </figure>
-      </div>
-    </div>
-  </div>
+<div class="about__list">
+<span class="tag">France</span>
+<span class="tag">Morocco</span>
+<span class="tag">Spain</span>
+<span class="tag">South Korea</span>
+<span class="tag">United States</span>
+<span class="tag">Japan</span>
+</div>
+</div>
+<div class="about__ph rv">
+<figure>
+<img loading="lazy" decoding="async" alt="Ahmed Boubakry with Mount Fuji in the background on a clear day" src="assets/fuji.webp"/>
+<figcaption data-t="t095">Mount Fuji, Japan.</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-
 </main>
-
 <footer class="contact" id="contact">
-  <div class="wrap">
-    <h2 class="rv">Get in touch</h2>
-    <p class="rv">Open to research collaborations and roles in computer vision, perception and robotics.</p>
-    <div class="contact__links rv">
-      <a href="mailto:ahmed.boubakry@epfl.ch"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.4 5.4A2.4 2.4 0 0 1 4.8 3h14.4a2.4 2.4 0 0 1 2.4 2.4v13.2a2.4 2.4 0 0 1-2.4 2.4H4.8a2.4 2.4 0 0 1-2.4-2.4V5.4Zm2.4-.6a.6.6 0 0 0-.6.6v.5l7.8 4.88 7.8-4.88v-.5a.6.6 0 0 0-.6-.6H4.8Zm15 3.19-7.28 4.55a1.2 1.2 0 0 1-1.24 0L4 7.99v10.59c0 .33.27.6.6.6h14.4a.6.6 0 0 0 .6-.6V7.99Z"/></svg>ahmed.boubakry@epfl.ch</a>
-      <a href="https://www.linkedin.com/in/ahmed-boubakry"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
-      <a href="https://github.com/Ahmedamyx"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
-      <a data-href="CV_PDF" download="Ahmed_Boubakry_CV.pdf">Curriculum vitae (PDF)</a>
-    </div>
-    <p class="fine rv">Cambridge, MA and Lausanne, Switzerland</p>
-  </div>
+<div class="wrap">
+<h2 class="rv" data-t="t096">Get in touch</h2>
+<p class="rv">Open to research collaborations and roles in computer vision, perception and robotics.</p>
+<div class="contact__links rv">
+<a href="mailto:ahmed.boubakry@epfl.ch"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M2.4 5.4A2.4 2.4 0 0 1 4.8 3h14.4a2.4 2.4 0 0 1 2.4 2.4v13.2a2.4 2.4 0 0 1-2.4 2.4H4.8a2.4 2.4 0 0 1-2.4-2.4V5.4Zm2.4-.6a.6.6 0 0 0-.6.6v.5l7.8 4.88 7.8-4.88v-.5a.6.6 0 0 0-.6-.6H4.8Zm15 3.19-7.28 4.55a1.2 1.2 0 0 1-1.24 0L4 7.99v10.59c0 .33.27.6.6.6h14.4a.6.6 0 0 0 .6-.6V7.99Z"></path></svg>ahmed.boubakry@epfl.ch</a>
+<a href="https://www.linkedin.com/in/ahmed-boubakry"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"></path></svg>LinkedIn</a>
+<a href="https://github.com/Ahmedamyx"><svg aria-hidden="true" class="ico" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub</a>
+<a data-href="CV_PDF" download="Ahmed_Boubakry_CV.pdf">Curriculum vitae (PDF)</a>
+</div>
+<p class="fine rv" data-t="t097">Cambridge, MA and Lausanne, Switzerland</p>
+</div>
 </footer>
-
 <dialog id="dlg">
-  <div class="mw">
-    <div class="mw__bar">
-      <span class="eyebrow" id="dlgCtx"></span>
-      <button class="mw__x" id="dlgX" type="button" aria-label="Close">&times;</button>
-    </div>
-    <div class="mw__body" id="dlgBody"></div>
-  </div>
+<div class="mw">
+<div class="mw__bar">
+<span class="eyebrow" id="dlgCtx"></span>
+<button aria-label="Close" class="mw__x" id="dlgX" type="button">×</button>
+</div>
+<div class="mw__body" id="dlgBody"></div>
+</div>
 </dialog>
-
 <!-- ===================== detail content ===================== -->
-
-<template id="tpl-autoci"><span data-ctx="2026 &middot; MIT Camera Culture Lab &middot; Master's thesis">
-  <h3>AutoCI</h3>
-  <p class="mw__lede">Two language-model agents design a complete imaging system for a task, reasoning from first-principles physics: the sensing modality, the optics, and the pipeline that turns their output back into an answer. One proposes, the other validates.</p>
-
-  <div class="stats">
-    <div class="stat"><b>95.6%</b><span>Robotic grasping accuracy</span></div>
-    <div class="stat"><b>90.8%</b><span>Localization in clutter</span></div>
-  </div>
-
-  <figure class="mw__fig">
-    <img loading="lazy" decoding="async" src="assets/autoci_harness.webp" alt="Diagram of the harness: a proposal agent reasons from physics, composes a design and measures it in a sandbox; the frozen design is scored on held-out scenes; a validation agent inspects, diagnoses and writes a critique that steers the next round">
-    <figcaption>The proposal agent never sees the held-out scenes it is scored on. The validator's critique is the only channel between rounds.</figcaption>
-  </figure>
-
-  <div class="blk"><h4>What I built</h4>
-    <ul>
-      <li>A Mitsuba 3 simulation covering lidar, transient, structured light, stereo and conventional cameras, with each task declaring its deliverable, metric and parameter bounds in a manifest.</li>
-      <li>An algorithm library spanning visual hulls, photometric stereo, dehazing and learned multi-view matching, from which the agent composes a pipeline.</li>
-      <li>Eight benchmark tasks across geometry, appearance, fog and occlusion, plus the evaluation loop that renders, scores and caches every submitted design.</li>
-    </ul>
-  </div>
-
-  <div class="blk"><h4>The hard part</h4>
-    <p>Designing the harness itself. The benchmark is only meaningful if the scoring, the train and test splits and the interface the agent works through are correct, and those decisions are not recoverable after the fact.</p>
-  </div>
-
-  <div class="blk"><h4>The solution</h4>
-    <p>Grade every design in the harness on held-out scenes, split categorical parameters into disjoint train and test partitions by hash, and calibrate the pass thresholds against hand-built reference designs rather than agent performance.</p>
-  </div>
-
-  <figure class="mw__fig">
-    <img loading="lazy" decoding="async" src="assets/autoci_e1.webp" alt="A robot work cell, a planned scan trajectory with its resulting point cloud, and six frames of the executed scan">
-    <figcaption>Design extended to motion: an ordered trajectory of wrist viewpoints, each validated against the arm's inverse kinematics.</figcaption>
-  </figure>
-
-  <figure class="mw__fig">
-    <img loading="lazy" decoding="async" src="assets/autoci_e2.webp" alt="Rendered kitchen scenes with ground-truth and predicted target positions marked and errors in millimetres">
-    <figcaption>Localizing an occluded target in a furnished room. Ground truth in red, prediction in cyan.</figcaption>
-  </figure>
-
-  <div class="blk"><h4>Results</h4>
-    <p>95.6% on robotic grasping and 90.8% on localization in cluttered scenes. Across a twenty-object reconstruction suite, held-out objects came back to within 0.4% to 3.6% Chamfer error.</p>
-  </div>
-
-  <div class="v3d" data-viewer="pair">
-    <canvas></canvas>
-    <div class="v3d__key">
-      <span><i style="background:#9AA5AF"></i>Ground truth</span>
-      <span><i style="background:#4F8FE8"></i>Reconstruction</span>
-    </div>
-    <div class="v3d__ctl">
-      <button class="v3d__nav" type="button" data-nav="-1" aria-label="Previous object">&lsaquo;</button>
-      <span class="v3d__name" data-name></span>
-      <span class="v3d__count" data-count></span>
-      <button class="v3d__nav" type="button" data-nav="1" aria-label="Next object">&rsaquo;</button>
-    </div>
-    <p class="v3d__hint">Drag either mesh to rotate.</p>
-  </div>
-
-  <div class="mw__foot"><a class="btn" href="https://github.com/Ahmedamyx/AutoCI">Repository</a></div>
+<template id="tpl-autoci"><span data-ctx="2026 · MIT Camera Culture Lab · Master's thesis" data-ctx-key="c211">
+<h3>AutoCI</h3>
+<p class="mw__lede" data-t="t098">Two language-model agents design a complete imaging system for a task, reasoning from first-principles physics: the sensing modality, the optics, and the pipeline that turns their output back into an answer. One proposes, the other validates.</p>
+<div class="stats">
+<div class="stat"><b>95.6%</b><span data-t="t106">Robotic grasping accuracy</span></div>
+<div class="stat"><b>90.8%</b><span data-t="t107">Localization in clutter</span></div>
+</div>
+<figure class="mw__fig">
+<img loading="lazy" decoding="async" alt="Diagram of the harness: a proposal agent reasons from physics, composes a design and measures it in a sandbox; the frozen design is scored on held-out scenes; a validation agent inspects, diagnoses and writes a critique that steers the next round" src="assets/autoci_harness.webp"/>
+<figcaption data-t="t188">The proposal agent never sees the held-out scenes it is scored on. The validator's critique is the only channel between rounds.</figcaption>
+</figure>
+<div class="blk"><h4 data-t="t117">What I built</h4>
+<ul>
+<li data-t="t164">A Mitsuba 3 simulation covering lidar, transient, structured light, stereo and conventional cameras, with each task declaring its deliverable, metric and parameter bounds in a manifest.</li>
+<li data-t="t165">An algorithm library spanning visual hulls, photometric stereo, dehazing and learned multi-view matching, from which the agent composes a pipeline.</li>
+<li data-t="t166">Eight benchmark tasks across geometry, appearance, fog and occlusion, plus the evaluation loop that renders, scores and caches every submitted design.</li>
+</ul>
+</div>
+<div class="blk"><h4 data-t="t118">The hard part</h4>
+<p data-t="t144">Designing the harness itself. The benchmark is only meaningful if the scoring, the train and test splits and the interface the agent works through are correct, and those decisions are not recoverable after the fact.</p>
+</div>
+<div class="blk"><h4 data-t="t119">The solution</h4>
+<p data-t="t145">Grade every design in the harness on held-out scenes, split categorical parameters into disjoint train and test partitions by hash, and calibrate the pass thresholds against hand-built reference designs rather than agent performance.</p>
+</div>
+<figure class="mw__fig">
+<img loading="lazy" decoding="async" alt="A robot work cell, a planned scan trajectory with its resulting point cloud, and six frames of the executed scan" src="assets/autoci_e1.webp"/>
+<figcaption data-t="t189">Design extended to motion: an ordered trajectory of wrist viewpoints, each validated against the arm's inverse kinematics.</figcaption>
+</figure>
+<figure class="mw__fig">
+<img loading="lazy" decoding="async" alt="Rendered kitchen scenes with ground-truth and predicted target positions marked and errors in millimetres" src="assets/autoci_e2.webp"/>
+<figcaption data-t="t190">Localizing an occluded target in a furnished room. Ground truth in red, prediction in cyan.</figcaption>
+</figure>
+<div class="blk"><h4 data-t="t120">Results</h4>
+<p data-t="t146">95.6% on robotic grasping and 90.8% on localization in cluttered scenes. Across a twenty-object reconstruction suite, held-out objects came back to within 0.4% to 3.6% Chamfer error.</p>
+</div>
+<div class="v3d" data-viewer="pair">
+<canvas></canvas>
+<div class="v3d__key">
+<span data-t="t207"><i style="background:#9AA5AF"></i>Ground truth</span>
+<span data-t="t208"><i style="background:#4F8FE8"></i>Reconstruction</span>
+</div>
+<div class="v3d__ctl">
+<button aria-label="Previous object" class="v3d__nav" data-nav="-1" type="button">‹</button>
+<span class="v3d__name" data-name=""></span>
+<span class="v3d__count" data-count=""></span>
+<button aria-label="Next object" class="v3d__nav" data-nav="1" type="button">›</button>
+</div>
+<p class="v3d__hint" data-t="t209">Drag either mesh to rotate.</p>
+</div>
+<div class="mw__foot"><a class="btn" data-t="t199" href="https://github.com/Ahmedamyx/AutoCI">Repository</a></div>
 </span></template>
-
-<template id="tpl-road"><span data-ctx="2025 &middot; EPFL Urban Transport Systems Lab">
-  <h3>Road segmentation from drone video</h3>
-  <p class="mw__lede">Segmenting the road surface from UAV footage of an urban district, for traffic analysis, and validating the result against an independently built satellite reference.</p>
-
-  <div class="stats">
-    <div class="stat"><b>83.2%</b><span>Detection in obstructed scenes</span></div>
-    <div class="stat"><b>6/6</b><span>Project grade</span></div>
-    <div class="stat"><b>5</b><span>Feature matchers benchmarked</span></div>
-  </div>
-
-  <div class="blk"><h4>What I built</h4>
-    <ul>
-      <li>A fine-tuned Segment Anything 2 model for road segmentation, driven through its prompt encoder with point prompts and the previous frame's mask.</li>
-      <li>A vehicle-masking stage so occluded road surface is recovered rather than left as holes in the mask.</li>
-      <li>A satellite reference stitched from Google Earth frames with OpenStitching, after benchmarking SIFT, ORB, LightGlue, SuperGlue and LoFTR for the matching step.</li>
-    </ul>
-  </div>
-
-  <div class="blk"><h4>The hard part</h4>
-    <p>Parked and moving vehicles cover the road surface, and segmenting each frame independently gave a mask that changed between consecutive frames.</p>
-  </div>
-
-  <div class="blk"><h4>The solution</h4>
-    <p>Segment vehicles into their own mask and condition the prompt encoder on the previous frame, so the road is completed under the vehicles and stays consistent across the video.</p>
-  </div>
-
-  <figure class="mw__fig">
-    <img loading="lazy" decoding="async" data-src="ROAD_ANIM" alt="Animated aerial footage with the road surface continuously segmented in blue">
-    <figcaption>The segmentation running across the drone footage.</figcaption>
-  </figure>
-
-  <figure class="mw__fig">
-    <img loading="lazy" decoding="async" src="assets/road_mosaic.webp" alt="A satellite mosaic of the Galatsi district assembled from many Google Earth frames">
-    <figcaption>Galatsi, Athens, stitched from Google Earth frames into the validation reference.</figcaption>
-  </figure>
-
-  <div class="mw__foot"><a class="btn" href="https://github.com/Ahmedamyx/Road-segementation">Repository</a></div>
+<template id="tpl-road"><span data-ctx="2025 · EPFL Urban Transport Systems Lab" data-ctx-key="c212">
+<h3>Road segmentation from drone video</h3>
+<p class="mw__lede" data-t="t099">Segmenting the road surface from UAV footage of an urban district, for traffic analysis, and validating the result against an independently built satellite reference.</p>
+<div class="stats">
+<div class="stat"><b>83.2%</b><span data-t="t108">Detection in obstructed scenes</span></div>
+<div class="stat"><b>6/6</b><span data-t="t109">Project grade</span></div>
+<div class="stat"><b>5</b><span data-t="t110">Feature matchers benchmarked</span></div>
+</div>
+<div class="blk"><h4 data-t="t121">What I built</h4>
+<ul>
+<li data-t="t167">A fine-tuned Segment Anything 2 model for road segmentation, driven through its prompt encoder with point prompts and the previous frame's mask.</li>
+<li data-t="t168">A vehicle-masking stage so occluded road surface is recovered rather than left as holes in the mask.</li>
+<li data-t="t169">A satellite reference stitched from Google Earth frames with OpenStitching, after benchmarking SIFT, ORB, LightGlue, SuperGlue and LoFTR for the matching step.</li>
+</ul>
+</div>
+<div class="blk"><h4 data-t="t122">The hard part</h4>
+<p data-t="t147">Parked and moving vehicles cover the road surface, and segmenting each frame independently gave a mask that changed between consecutive frames.</p>
+</div>
+<div class="blk"><h4 data-t="t123">The solution</h4>
+<p data-t="t148">Segment vehicles into their own mask and condition the prompt encoder on the previous frame, so the road is completed under the vehicles and stays consistent across the video.</p>
+</div>
+<figure class="mw__fig">
+<img loading="lazy" decoding="async" alt="Animated aerial footage with the road surface continuously segmented in blue" data-src="ROAD_ANIM"/>
+<figcaption data-t="t191">The segmentation running across the drone footage.</figcaption>
+</figure>
+<figure class="mw__fig">
+<img loading="lazy" decoding="async" alt="A satellite mosaic of the Galatsi district assembled from many Google Earth frames" src="assets/road_mosaic.webp"/>
+<figcaption data-t="t192">Galatsi, Athens, stitched from Google Earth frames into the validation reference.</figcaption>
+</figure>
+<div class="mw__foot"><a class="btn" data-t="t200" href="https://github.com/Ahmedamyx/Road-segementation">Repository</a></div>
 </span></template>
-
-<template id="tpl-lesion"><span data-ctx="2026 &middot; EPFL Signal Processing Laboratory 5">
-  <h3>Synthetic stroke lesion segmentation</h3>
-  <p class="mw__lede">Training a stroke lesion segmentation model on simulated data, to reduce the dependence on expert voxel-wise annotation of diffusion MRI.</p>
-
-  <div class="stats">
-    <div class="stat"><b>0.85</b><span>Dice on real data</span></div>
-    <div class="stat"><b>0.73</b><span>Baseline it improved on</span></div>
-    <div class="stat"><b>5.75/6</b><span>Project grade</span></div>
-  </div>
-
-  <div class="blk"><h4>What I built</h4>
-    <ul>
-      <li>A statistical analysis of ISLES-2022 measuring lesion volume, count, ADC and DWI intensity contrast, anatomical location via SynthSeg, and 3-D shape descriptors.</li>
-      <li>A generator that inserts synthetic lesions into healthy Human Connectome Project scans under those measured priors, with a shape library fitted to the descriptor distributions.</li>
-      <li>Training and evaluation of a 3-D Attention U-Net in MONAI across four configurations of increasing simulation realism.</li>
-    </ul>
-  </div>
-
-  <div class="v3d" data-viewer="lesion">
-    <canvas></canvas>
-    <div class="v3d__ctl">
-      <button class="v3d__nav" type="button" data-nav="-1" aria-label="Previous shape">&lsaquo;</button>
-      <span class="v3d__name" data-name></span>
-      <span class="v3d__count" data-count></span>
-      <button class="v3d__nav" type="button" data-nav="1" aria-label="Next shape">&rsaquo;</button>
-    </div>
-    <p class="v3d__hint">Synthetic lesion templates generated to match the measured shape statistics. Drag to rotate.</p>
-  </div>
-
-  <div class="blk"><h4>The hard part</h4>
-    <p>Lesion voxels are a small fraction of each volume, so uniform patch sampling collapsed the network to predicting background. Increasing the geometric realism of the synthetic lesions also raised scores on synthetic validation while lowering them on real scans.</p>
-  </div>
-
-  <div class="blk"><h4>The solution</h4>
-    <p>Class-balanced patch sampling at roughly 1:2 background to lesion, and priors measured from real data rather than assumed, with each realism setting evaluated on real scans instead of synthetic ones.</p>
-  </div>
-
-  <figure class="mw__fig">
-    <img loading="lazy" decoding="async" data-src="LESION" alt="Two brain MRI views with predicted stroke lesions marked in red">
-    <figcaption>Model predictions on a held-out volume.</figcaption>
-  </figure>
-
-  <div class="blk"><h4>Results</h4>
-    <p>0.85 Dice on real ISLES validation data against a 0.73 baseline, roughly a 10% improvement. All four configurations exceeded 0.81. Graded 5.75/6.</p>
-  </div>
-
-  <div class="mw__foot"><a class="btn" href="https://github.com/Ahmedamyx/Synthetic-Lesion">Repository</a></div>
+<template id="tpl-lesion"><span data-ctx="2026 · EPFL Signal Processing Laboratory 5" data-ctx-key="c213">
+<h3>Synthetic stroke lesion segmentation</h3>
+<p class="mw__lede" data-t="t100">Training a stroke lesion segmentation model on simulated data, to reduce the dependence on expert voxel-wise annotation of diffusion MRI.</p>
+<div class="stats">
+<div class="stat"><b>0.85</b><span data-t="t111">Dice on real data</span></div>
+<div class="stat"><b>0.73</b><span data-t="t112">Baseline it improved on</span></div>
+<div class="stat"><b>5.75/6</b><span data-t="t113">Project grade</span></div>
+</div>
+<div class="blk"><h4 data-t="t124">What I built</h4>
+<ul>
+<li data-t="t170">A statistical analysis of ISLES-2022 measuring lesion volume, count, ADC and DWI intensity contrast, anatomical location via SynthSeg, and 3-D shape descriptors.</li>
+<li data-t="t171">A generator that inserts synthetic lesions into healthy Human Connectome Project scans under those measured priors, with a shape library fitted to the descriptor distributions.</li>
+<li data-t="t172">Training and evaluation of a 3-D Attention U-Net in MONAI across four configurations of increasing simulation realism.</li>
+</ul>
+</div>
+<div class="v3d" data-viewer="lesion">
+<canvas></canvas>
+<div class="v3d__ctl">
+<button aria-label="Previous shape" class="v3d__nav" data-nav="-1" type="button">‹</button>
+<span class="v3d__name" data-name=""></span>
+<span class="v3d__count" data-count=""></span>
+<button aria-label="Next shape" class="v3d__nav" data-nav="1" type="button">›</button>
+</div>
+<p class="v3d__hint" data-t="t210">Synthetic lesion templates generated to match the measured shape statistics. Drag to rotate.</p>
+</div>
+<div class="blk"><h4 data-t="t125">The hard part</h4>
+<p data-t="t149">Lesion voxels are a small fraction of each volume, so uniform patch sampling collapsed the network to predicting background. Increasing the geometric realism of the synthetic lesions also raised scores on synthetic validation while lowering them on real scans.</p>
+</div>
+<div class="blk"><h4 data-t="t126">The solution</h4>
+<p data-t="t150">Class-balanced patch sampling at roughly 1:2 background to lesion, and priors measured from real data rather than assumed, with each realism setting evaluated on real scans instead of synthetic ones.</p>
+</div>
+<figure class="mw__fig">
+<img loading="lazy" decoding="async" alt="Two brain MRI views with predicted stroke lesions marked in red" data-src="LESION"/>
+<figcaption data-t="t193">Model predictions on a held-out volume.</figcaption>
+</figure>
+<div class="blk"><h4 data-t="t127">Results</h4>
+<p data-t="t151">0.85 Dice on real ISLES validation data against a 0.73 baseline, roughly a 10% improvement. All four configurations exceeded 0.81. Graded 5.75/6.</p>
+</div>
+<div class="mw__foot"><a class="btn" data-t="t201" href="https://github.com/Ahmedamyx/Synthetic-Lesion">Repository</a></div>
 </span></template>
-
-<template id="tpl-rover"><span data-ctx="2023 &middot; EPFL Xplore &middot; European Rover Challenge">
-  <h3>Rover sensor fusion</h3>
-  <p class="mw__lede">Fusing the RGB camera with the lidar for object detection on the EPFL Xplore Mars rover, to improve accuracy near the vehicle and extend the range at which objects are detected.</p>
-
-  <div class="stats">
-    <div class="stat"><b>Top 10</b><span>European Rover Challenge</span></div>
-    <div class="stat"><b>RGB + lidar</b><span>Fused detection</span></div>
-    <div class="stat"><b>8 mos</b><span>Project duration</span></div>
-  </div>
-
-  <div class="blk"><h4>What I built</h4>
-    <ul>
-      <li>The LiDAR and depth-camera fusion for object detection and localization, integrated into the rover's ROS 2 navigation stack.</li>
-      <li>The sensor integration and tuning used at the European Rover Challenge.</li>
-      <li>Testing against the team's Gazebo simulation of the rover, so the pipeline could be developed without the physical vehicle.</li>
-    </ul>
-  </div>
-
-  <div class="blk"><h4>The hard part</h4>
-    <p>The two sensors fail in opposite regimes. Lidar returns become sparse with distance, and the camera has no reliable depth, so neither alone covers both the near field and the far field.</p>
-  </div>
-
-  <div class="blk"><h4>The solution</h4>
-    <p>Weight the two sensors by range rather than averaging them, using lidar geometry close in and camera detections further out.</p>
-  </div>
-
-  <figure class="mw__fig">
-    <img loading="lazy" decoding="async" data-src="ROVER_LIDAR" alt="Lidar returns visualised over the Mars-yard terrain from the rover's point of view">
-    <figcaption>Lidar returns from the rover over the Mars-yard terrain.</figcaption>
-  </figure>
-
-  <div class="blk"><h4>Results</h4>
-    <p>Extended detection range and improved localization accuracy, contributing to a top-10 finish at the European Rover Challenge.</p>
-    <p style="font-size:.85rem;color:var(--ink-3)">The linked repository is the EPFL Xplore team's shared simulation codebase. My contribution was the sensor fusion within it.</p>
-  </div>
-
-  <div class="mw__foot"><a class="btn" href="https://github.com/Ahmedamyx/XPLORE-2023-Sensor-fusion-rover">Repository</a></div>
+<template id="tpl-rover"><span data-ctx="2023 · EPFL Xplore · European Rover Challenge" data-ctx-key="c214">
+<h3>Rover sensor fusion</h3>
+<p class="mw__lede" data-t="t101">Fusing the RGB camera with the lidar for object detection on the EPFL Xplore Mars rover, to improve accuracy near the vehicle and extend the range at which objects are detected.</p>
+<div class="stats">
+<div class="stat"><b>Top 10</b><span data-t="t114">European Rover Challenge</span></div>
+<div class="stat"><b>RGB + lidar</b><span data-t="t115">Fused detection</span></div>
+<div class="stat"><b>8 mos</b><span data-t="t116">Project duration</span></div>
+</div>
+<div class="blk"><h4 data-t="t128">What I built</h4>
+<ul>
+<li data-t="t173">The LiDAR and depth-camera fusion for object detection and localization, integrated into the rover's ROS 2 navigation stack.</li>
+<li data-t="t174">The sensor integration and tuning used at the European Rover Challenge.</li>
+<li data-t="t175">Testing against the team's Gazebo simulation of the rover, so the pipeline could be developed without the physical vehicle.</li>
+</ul>
+</div>
+<div class="blk"><h4 data-t="t129">The hard part</h4>
+<p data-t="t152">The two sensors fail in opposite regimes. Lidar returns become sparse with distance, and the camera has no reliable depth, so neither alone covers both the near field and the far field.</p>
+</div>
+<div class="blk"><h4 data-t="t130">The solution</h4>
+<p data-t="t153">Weight the two sensors by range rather than averaging them, using lidar geometry close in and camera detections further out.</p>
+</div>
+<figure class="mw__fig">
+<img loading="lazy" decoding="async" alt="Lidar returns visualised over the Mars-yard terrain from the rover's point of view" data-src="ROVER_LIDAR"/>
+<figcaption data-t="t194">Lidar returns from the rover over the Mars-yard terrain.</figcaption>
+</figure>
+<div class="blk"><h4 data-t="t131">Results</h4>
+<p data-t="t154">Extended detection range and improved localization accuracy, contributing to a top-10 finish at the European Rover Challenge.</p>
+<p data-t="t155" style="font-size:.85rem;color:var(--ink-3)">The linked repository is the EPFL Xplore team's shared simulation codebase. My contribution was the sensor fusion within it.</p>
+</div>
+<div class="mw__foot"><a class="btn" data-t="t202" href="https://github.com/Ahmedamyx/XPLORE-2023-Sensor-fusion-rover">Repository</a></div>
 </span></template>
-
-<template id="tpl-evo"><span data-ctx="2022 &middot; EPFL MICRO-515 Evolutionary Robotics">
-  <h3>Evolutionary robotics</h3>
-  <p class="mw__lede">Rather than designing a robot and then writing a controller for it, evolve both together. The best design in simulation was then built in hardware to see whether the gait survived.</p>
-
-  <div class="blk"><h4>What I built</h4>
-    <ul>
-      <li>The evolutionary loop optimising a modular robot's morphology and controller together against a locomotion objective.</li>
-      <li>The physical build of the best design, from 3-D-printed modules and servos.</li>
-      <li>The comparison between the evolved gait in simulation and the same design on a real floor.</li>
-    </ul>
-  </div>
-
-  <div class="blk"><h4>The hard part</h4>
-    <p>Tuning the evolutionary hyperparameters, population size, generation count and offspring rate, since they determine whether the search converges at all. Gaits that exploited inaccuracies in the simulated contact model also failed to transfer to hardware.</p>
-  </div>
-
-  <div class="blk"><h4>The solution</h4>
-    <p>Sweep the hyperparameters against a fixed evaluation budget and select designs on transferred performance rather than simulated fitness alone.</p>
-  </div>
-
-  <div class="mw__cols">
-    <figure class="mw__fig" style="margin:0">
-      <img loading="lazy" decoding="async" data-src="EVO_ANIM" alt="The evolved modular robot walking in simulation">
-      <figcaption>In simulation.</figcaption>
-    </figure>
-    <figure class="mw__fig" style="margin:0">
-      <img loading="lazy" decoding="async" data-src="EVO_REAL_ANIM" alt="The 3-D-printed modular robot moving on a real floor">
-      <figcaption>The same design, built and running.</figcaption>
-    </figure>
-  </div>
-
-  <div class="mw__foot"><a class="btn" href="https://github.com/ZuninoLuca/Evolutionary_robotics">Repository</a></div>
+<template id="tpl-evo"><span data-ctx="2022 · EPFL MICRO-515 Evolutionary Robotics" data-ctx-key="c215">
+<h3>Evolutionary robotics</h3>
+<p class="mw__lede" data-t="t102">Rather than designing a robot and then writing a controller for it, evolve both together. The best design in simulation was then built in hardware to see whether the gait survived.</p>
+<div class="blk"><h4 data-t="t132">What I built</h4>
+<ul>
+<li data-t="t176">The evolutionary loop optimising a modular robot's morphology and controller together against a locomotion objective.</li>
+<li data-t="t177">The physical build of the best design, from 3-D-printed modules and servos.</li>
+<li data-t="t178">The comparison between the evolved gait in simulation and the same design on a real floor.</li>
+</ul>
+</div>
+<div class="blk"><h4 data-t="t133">The hard part</h4>
+<p data-t="t156">Tuning the evolutionary hyperparameters, population size, generation count and offspring rate, since they determine whether the search converges at all. Gaits that exploited inaccuracies in the simulated contact model also failed to transfer to hardware.</p>
+</div>
+<div class="blk"><h4 data-t="t134">The solution</h4>
+<p data-t="t157">Sweep the hyperparameters against a fixed evaluation budget and select designs on transferred performance rather than simulated fitness alone.</p>
+</div>
+<div class="mw__cols">
+<figure class="mw__fig" style="margin:0">
+<img loading="lazy" decoding="async" alt="The evolved modular robot walking in simulation" data-src="EVO_ANIM"/>
+<figcaption data-t="t195">In simulation.</figcaption>
+</figure>
+<figure class="mw__fig" style="margin:0">
+<img loading="lazy" decoding="async" alt="The 3-D-printed modular robot moving on a real floor" data-src="EVO_REAL_ANIM"/>
+<figcaption data-t="t196">The same design, built and running.</figcaption>
+</figure>
+</div>
+<div class="mw__foot"><a class="btn" data-t="t203" href="https://github.com/ZuninoLuca/Evolutionary_robotics">Repository</a></div>
 </span></template>
-
-<template id="tpl-mpc"><span data-ctx="2024 &middot; EPFL ME-425 Model Predictive Control">
-  <h3>Rocket model-predictive control</h3>
-  <p class="mw__lede">A thrust-vectored rocket with twelve states and four inputs, tracking a path in three dimensions under hard limits on servo deflection, throttle and attitude.</p>
-
-  <div class="blk"><h4>What I built</h4>
-    <ul>
-      <li>Four constrained MPC controllers, one per decoupled sub-system, each with a terminal invariant set and terminal cost so that recursive feasibility holds.</li>
-      <li>A disturbance observer on an augmented model, giving offset-free tracking when the rocket's true mass differs from the model.</li>
-      <li>A nonlinear MPC over the full twelve-state model in CasADi, discretised with RK4 and solved with IPOPT.</li>
-    </ul>
-  </div>
-
-  <div class="blk"><h4>The hard part</h4>
-    <p>The controller's computation time delays the input reaching the actuators. At a delay of two sampling steps the closed loop oscillates, and at three it becomes unstable.</p>
-  </div>
-
-  <div class="blk"><h4>The solution</h4>
-    <p>Predict the state forward by the expected delay using the inputs already sent but not yet applied, and optimise from that predicted state.</p>
-  </div>
-
-  <figure class="mw__fig">
-    <img loading="lazy" decoding="async" src="assets/mpc_delay.webp" alt="Control plots showing smooth convergence under a fully compensated three-step actuator delay">
-    <figcaption>Three-step actuator delay, fully compensated. Uncompensated, this same case is unstable.</figcaption>
-  </figure>
-
-  <div class="mw__foot"><a class="btn" href="https://github.com/Ahmedamyx/MPC-Project">Repository</a></div>
+<template id="tpl-mpc"><span data-ctx="2024 · EPFL ME-425 Model Predictive Control" data-ctx-key="c216">
+<h3>Rocket model-predictive control</h3>
+<p class="mw__lede" data-t="t103">A thrust-vectored rocket with twelve states and four inputs, tracking a path in three dimensions under hard limits on servo deflection, throttle and attitude.</p>
+<div class="blk"><h4 data-t="t135">What I built</h4>
+<ul>
+<li data-t="t179">Four constrained MPC controllers, one per decoupled sub-system, each with a terminal invariant set and terminal cost so that recursive feasibility holds.</li>
+<li data-t="t180">A disturbance observer on an augmented model, giving offset-free tracking when the rocket's true mass differs from the model.</li>
+<li data-t="t181">A nonlinear MPC over the full twelve-state model in CasADi, discretised with RK4 and solved with IPOPT.</li>
+</ul>
+</div>
+<div class="blk"><h4 data-t="t136">The hard part</h4>
+<p data-t="t158">The controller's computation time delays the input reaching the actuators. At a delay of two sampling steps the closed loop oscillates, and at three it becomes unstable.</p>
+</div>
+<div class="blk"><h4 data-t="t137">The solution</h4>
+<p data-t="t159">Predict the state forward by the expected delay using the inputs already sent but not yet applied, and optimise from that predicted state.</p>
+</div>
+<figure class="mw__fig">
+<img loading="lazy" decoding="async" alt="Control plots showing smooth convergence under a fully compensated three-step actuator delay" src="assets/mpc_delay.webp"/>
+<figcaption data-t="t197">Three-step actuator delay, fully compensated. Uncompensated, this same case is unstable.</figcaption>
+</figure>
+<div class="mw__foot"><a class="btn" data-t="t204" href="https://github.com/Ahmedamyx/MPC-Project">Repository</a></div>
 </span></template>
-
-<template id="tpl-bomr"><span data-ctx="2024 &middot; EPFL MICRO-452 Basics of Mobile Robotics">
-  <h3>Autonomous mobile robot navigation</h3>
-  <p class="mw__lede">A differential-drive robot crossing a physical arena to a goal, planning around the obstacles it can see and reacting to the ones it cannot.</p>
-
-  <div class="blk"><h4>What I built</h4>
-    <ul>
-      <li>Overhead-camera vision extracting obstacles as polygons, expanding their corners for the robot's footprint, building a visibility graph and running Dijkstra over it.</li>
-      <li>A five-state extended Kalman filter fusing camera pose with wheel odometry, switching to an encoder-only measurement model when the camera view is lost.</li>
-      <li>Proportional control on distance and heading, with reactive avoidance driven by the proximity sensors.</li>
-    </ul>
-  </div>
-
-  <div class="blk"><h4>The hard part</h4>
-    <p>Moving from four independently developed modules, vision, global navigation, control and obstacle avoidance, to a single asynchronous stack. The modules ran at different rates and had to stay consistent while the environment changed, for example when shadows altered the camera view.</p>
-  </div>
-
-  <div class="blk"><h4>The solution</h4>
-    <p>Define one shared state estimate that every module reads from and writes to, so each can run at its own rate, and make each perception step report validity so the filter falls back to odometry instead of consuming a bad measurement.</p>
-  </div>
-
-  <div class="mw__foot"><a class="btn" href="https://github.com/Ahmedamyx/BOMR-Project">Repository</a></div>
+<template id="tpl-bomr"><span data-ctx="2024 · EPFL MICRO-452 Basics of Mobile Robotics" data-ctx-key="c217">
+<h3>Autonomous mobile robot navigation</h3>
+<p class="mw__lede" data-t="t104">A differential-drive robot crossing a physical arena to a goal, planning around the obstacles it can see and reacting to the ones it cannot.</p>
+<div class="blk"><h4 data-t="t138">What I built</h4>
+<ul>
+<li data-t="t182">Overhead-camera vision extracting obstacles as polygons, expanding their corners for the robot's footprint, building a visibility graph and running Dijkstra over it.</li>
+<li data-t="t183">A five-state extended Kalman filter fusing camera pose with wheel odometry, switching to an encoder-only measurement model when the camera view is lost.</li>
+<li data-t="t184">Proportional control on distance and heading, with reactive avoidance driven by the proximity sensors.</li>
+</ul>
+</div>
+<div class="blk"><h4 data-t="t139">The hard part</h4>
+<p data-t="t160">Moving from four independently developed modules, vision, global navigation, control and obstacle avoidance, to a single asynchronous stack. The modules ran at different rates and had to stay consistent while the environment changed, for example when shadows altered the camera view.</p>
+</div>
+<div class="blk"><h4 data-t="t140">The solution</h4>
+<p data-t="t161">Define one shared state estimate that every module reads from and writes to, so each can run at its own rate, and make each perception step report validity so the filter falls back to odometry instead of consuming a bad measurement.</p>
+</div>
+<div class="mw__foot"><a class="btn" data-t="t205" href="https://github.com/Ahmedamyx/BOMR-Project">Repository</a></div>
 </span></template>
-
-<template id="tpl-uno"><span data-ctx="2026 &middot; EPFL &middot; Group project">
-  <h3>Card detection and classification</h3>
-  <p class="mw__lede">Detecting and classifying playing cards from photographs of a live game, on a patterned tablecloth.</p>
-
-  <div class="blk"><h4>What I built</h4>
-    <ul>
-      <li>A hand-annotated dataset built and augmented in Roboflow, from single cards to cluttered spreads.</li>
-      <li>A YOLO detector trained to localise and classify each card.</li>
-      <li>A segmentation stage to separate cards from the background before classification.</li>
-    </ul>
-  </div>
-
-  <div class="blk"><h4>The hard part</h4>
-    <p>The table surface was a leaf-patterned cloth whose shapes and colours resemble card markings, which produced both false positives on the background and missed cards.</p>
-  </div>
-
-  <div class="blk"><h4>The solution</h4>
-    <p>Tighten the image-processing stack ahead of the detector, segmenting the cards from the background so classification runs on card regions rather than the raw frame.</p>
-  </div>
-
-  <figure class="mw__fig">
-    <img loading="lazy" decoding="async" src="assets/uno_infer.webp" alt="Four overlapping cards, each detected and classified with a confidence score between 0.96 and 0.98">
-    <figcaption>Inference on a spread of overlapping cards, each classified correctly between 0.96 and 0.98 confidence.</figcaption>
-  </figure>
-
-  <div class="mw__foot"><a class="btn" href="https://github.com/Ahmedamyx/final_group_29_Asthierryx">Repository</a></div>
+<template id="tpl-uno"><span data-ctx="2026 · EPFL · Group project" data-ctx-key="c218">
+<h3>Card detection and classification</h3>
+<p class="mw__lede" data-t="t105">Detecting and classifying playing cards from photographs of a live game, on a patterned tablecloth.</p>
+<div class="blk"><h4 data-t="t141">What I built</h4>
+<ul>
+<li data-t="t185">A hand-annotated dataset built and augmented in Roboflow, from single cards to cluttered spreads.</li>
+<li data-t="t186">A YOLO detector trained to localise and classify each card.</li>
+<li data-t="t187">A segmentation stage to separate cards from the background before classification.</li>
+</ul>
+</div>
+<div class="blk"><h4 data-t="t142">The hard part</h4>
+<p data-t="t162">The table surface was a leaf-patterned cloth whose shapes and colours resemble card markings, which produced both false positives on the background and missed cards.</p>
+</div>
+<div class="blk"><h4 data-t="t143">The solution</h4>
+<p data-t="t163">Tighten the image-processing stack ahead of the detector, segmenting the cards from the background so classification runs on card regions rather than the raw frame.</p>
+</div>
+<figure class="mw__fig">
+<img loading="lazy" decoding="async" alt="Four overlapping cards, each detected and classified with a confidence score between 0.96 and 0.98" src="assets/uno_infer.webp"/>
+<figcaption data-t="t198">Inference on a spread of overlapping cards, each classified correctly between 0.96 and 0.98 confidence.</figcaption>
+</figure>
+<div class="mw__foot"><a class="btn" data-t="t206" href="https://github.com/Ahmedamyx/final_group_29_Asthierryx">Repository</a></div>
 </span></template>
-
 <script>
 (function(){
   "use strict";
   var root=document.documentElement;
+  /* ---------------- language ---------------- */
+  var FR_T={"t001": "Travaux", "t002": "Expérience", "t003": "Compétences", "t004": "À propos", "t007": "Ingénieur en robotique et vision par ordinateur", "t008": "M.Sc. en robotique de l'EPFL avec une mineure en technologies biomédicales, actuellement en recherche sur la perception pour agents incarnés au MIT Camera Culture Lab. Je travaille sur la détection, la segmentation et la fusion de capteurs pour l'autonomie en conditions réelles, en PyTorch, C++ et ROS 2.", "t009": "Télécharger le CV", "t015": "Étudiant invité, Cambridge MA", "t016": "M.Sc., Lausanne, Suisse", "t017": "Travaux sélectionnés", "t018": "Expérience et recherche", "t019": "Compétences", "t020": "En dehors de l'écran", "t021": "Huit projets en imagerie computationnelle, analyse d'images médicales, commande et robotique mobile. Ouvrez-en un pour voir ce qui a été développé, où se situait la difficulté et le résultat obtenu.", "t022": "Postes de recherche et en entreprise en vision par ordinateur, perception et robotique, de la conception de systèmes d'imagerie au MIT à l'inspection autonome en industrie et l'analyse d'images médicales à l'EPFL.", "t023": "Outils et méthodes utilisés dans les travaux ci-dessus, regroupés par usage.", "t024": "2026, jusqu'en sept.", "t025": "2025, 6 mois", "t026": "2025 à 2026, 4 mois", "t027": "2024 à 2025, 4 mois", "t028": "2023 à 2024, 8 mois", "t029": "2021 à 2025", "t030": "Étudiant invité", "t031": "Ingénieur vision par ordinateur, stagiaire", "t032": "Projet de semestre : segmentation de lésions d'AVC", "t033": "Projet de semestre : vision par ordinateur", "t034": "Navigation de rover", "t035": "Assistant d'enseignement", "t037": "<b>Michelin Recherche et Technique</b>, Givisiez, Suisse", "t038": "<b>LTS5, Laboratoire de traitement des signaux 5, EPFL</b>, Lausanne", "t039": "<b>LUTS, Laboratoire des systèmes de transport urbain, EPFL</b>, Lausanne", "t042": "Développement d'<b>AutoCI</b>, un système agentique qui conçoit de bout en bout des systèmes d'imagerie adaptés à une tâche, en choisissant la modalité de mesure, l'optique et l'algorithme de perception via une boucle proposition-validation entre deux agents LLM.", "t043": "Réduction du coût de recherche en exécutant chaque pipeline proposé plutôt qu'en réentraînant un modèle par candidat.", "t044": "95,6 % en préhension robotique et 90,8 % en localisation dans des scènes encombrées.", "t045": "Vision par ordinateur pour un robot qui se déplace jusqu'aux véhicules et inspecte leurs roues : détection de roues, détection de défauts et estimation du poids à partir des capteurs embarqués.", "t046": "Simulation de lésions synthétiques et segmentation par apprentissage profond sur des IRM du Human Connectome Project. Précision augmentée d'environ 10 % par enrichissement d'annotations rares. Note : 5,75/6.", "t047": "Segmentation de routes et d'occlusions à partir de vidéo de drone avec Segment Anything 2, atteignant 83,2 % de précision de détection en scènes obstruées. Note : 6/6.", "t048": "Fusion LiDAR et caméra de profondeur ayant étendu la portée de détection et amélioré la localisation, contribuant à une place dans le top 10 à l'European Rover Challenge.", "t049": "Algèbre linéaire, Analyse I et II et Analyse avancée : animation des séances d'exercices, correction des travaux et des examens, surveillance d'examens. Tuteur du soir au Centre Propédeutique.", "t050": "Basics of Mobile Robotics (MICRO-452), 2024 : correction des projets et exercices, accompagnement des équipes durant le semestre.", "t052": "Segmentation de routes à partir de vidéo de drone", "t053": "Segmentation de lésions d'AVC synthétiques", "t054": "Fusion de capteurs pour rover", "t055": "Robotique évolutionnaire", "t056": "Commande prédictive d'une fusée", "t057": "Navigation autonome d'un robot mobile", "t058": "Détection et classification de cartes", "t059": "Deux agents LLM conçoivent un système d'imagerie complet pour une tâche, de la modalité de mesure à la reconstruction, et chaque conception est validée sur des scènes jamais vues.", "t060": "95,6 % préhension, 90,8 % localisation", "t061": "Segment Anything 2, affiné pour segmenter les routes sous occlusion de véhicules sur une vidéo aérienne complète.", "t062": "83,2 % de détection en scènes obstruées", "t063": "Lésions d'AVC simulées sur des IRM cérébrales saines pour entraîner un réseau de segmentation sans annotation experte rare.", "t064": "Dice de 0,85, contre 0,73 en référence", "t065": "Fusion RGB et lidar pour la détection d'objets sur un rover martien, précision accrue à courte distance et portée étendue au loin.", "t066": "Top 10, European Rover Challenge", "t067": "Évolution conjointe de la morphologie et du contrôleur d'un robot modulaire en simulation, puis fabrication du meilleur design.", "t068": "Commande prédictive sous contraintes pour une fusée à poussée vectorielle, jusqu'à un contrôleur non linéaire stable malgré le retard d'actionnement.", "t069": "Vision par caméra zénithale, planification par graphe de visibilité et filtre de Kalman qui continue de localiser lorsque la vue caméra est perdue.", "t070": "Un détecteur YOLO entraîné sur un jeu de données annoté à la main pour reconnaître des cartes en cours de partie.", "t071": "En savoir plus, avec comparaison 3D", "t072": "En savoir plus", "t073": "En savoir plus", "t074": "En savoir plus", "t075": "En savoir plus", "t076": "En savoir plus", "t077": "En savoir plus", "t078": "En savoir plus", "t079": "Projet de master", "t080": "Projet de semestre", "t081": "Projet de semestre", "t082": "Parascolaire", "t083": "Projet de cours", "t084": "Projet de cours", "t085": "Projet de cours", "t086": "Projet de cours", "t087": "Langages", "t088": "Vision et apprentissage profond", "t089": "Robotique", "t090": "Capteurs et fusion", "t091": "Commande et estimation", "t092": "Simulation et 3D", "t093": "Imagerie médicale", "t094": "Outils", "t095": "Mont Fuji, Japon.", "t096": "Me contacter", "t097": "Cambridge, MA et Lausanne, Suisse", "t098": "Deux agents à base de modèles de langage conçoivent un système d'imagerie complet pour une tâche, en raisonnant à partir des principes physiques : la modalité de mesure, l'optique, et le pipeline qui transforme leur sortie en réponse. L'un propose, l'autre valide.", "t099": "Segmentation de la surface routière à partir d'images de drone d'un quartier urbain, pour l'analyse de trafic, avec validation face à une référence satellite construite indépendamment.", "t100": "Entraînement d'un modèle de segmentation de lésions d'AVC sur données simulées, afin de réduire la dépendance à l'annotation experte voxel par voxel en IRM de diffusion.", "t101": "Fusion de la caméra RGB et du lidar pour la détection d'objets sur le rover martien d'EPFL Xplore, afin d'améliorer la précision près du véhicule et d'étendre la portée de détection.", "t102": "Plutôt que de concevoir un robot puis d'écrire son contrôleur, faire évoluer les deux ensemble. Le meilleur design en simulation a ensuite été fabriqué pour voir si la démarche survivait au passage au réel.", "t103": "Une fusée à poussée vectorielle à douze états et quatre entrées, suivant une trajectoire en trois dimensions sous contraintes strictes de débattement des servos, de poussée et d'attitude.", "t104": "Un robot à entraînement différentiel traversant une arène réelle jusqu'à un objectif, planifiant autour des obstacles visibles et réagissant à ceux qui ne le sont pas.", "t105": "Détection et classification de cartes à jouer à partir de photographies d'une partie en cours, sur une nappe à motifs.", "t106": "Précision de préhension robotique", "t107": "Localisation en environnement encombré", "t108": "Détection en scènes obstruées", "t109": "Note du projet", "t110": "Algorithmes d'appariement évalués", "t111": "Dice sur données réelles", "t112": "Référence améliorée", "t113": "Note du projet", "t114": "European Rover Challenge", "t115": "Détection fusionnée", "t116": "Durée du projet", "t117": "Ce que j'ai développé", "t118": "La difficulté", "t119": "La solution", "t120": "Résultats", "t121": "Ce que j'ai développé", "t122": "La difficulté", "t123": "La solution", "t124": "Ce que j'ai développé", "t125": "La difficulté", "t126": "La solution", "t127": "Résultats", "t128": "Ce que j'ai développé", "t129": "La difficulté", "t130": "La solution", "t131": "Résultats", "t132": "Ce que j'ai développé", "t133": "La difficulté", "t134": "La solution", "t135": "Ce que j'ai développé", "t136": "La difficulté", "t137": "La solution", "t138": "Ce que j'ai développé", "t139": "La difficulté", "t140": "La solution", "t141": "Ce que j'ai développé", "t142": "La difficulté", "t143": "La solution", "t144": "La conception du banc d'essai lui-même. Le benchmark n'a de sens que si la notation, les partitions d'entraînement et de test et l'interface par laquelle l'agent travaille sont correctes, et ces décisions ne se rattrapent pas après coup.", "t145": "Noter chaque conception dans le banc d'essai sur des scènes réservées, séparer les paramètres catégoriels en partitions disjointes par hachage, et calibrer les seuils de réussite sur des conceptions de référence construites à la main plutôt que sur la performance de l'agent.", "t146": "95,6 % en préhension robotique et 90,8 % en localisation dans des scènes encombrées. Sur une suite de reconstruction de vingt objets, les objets réservés sont restitués avec une erreur de Chamfer de 0,4 % à 3,6 %.", "t147": "Les véhicules en stationnement et en mouvement couvrent la surface routière, et segmenter chaque image indépendamment donnait un masque qui changeait d'une image à l'autre.", "t148": "Segmenter les véhicules dans un masque distinct et conditionner l'encodeur de prompt sur l'image précédente, de sorte que la route soit complétée sous les véhicules et reste cohérente sur toute la vidéo.", "t149": "Les voxels de lésion ne représentent qu'une faible fraction de chaque volume : un échantillonnage uniforme de patchs faisait converger le réseau vers la prédiction du fond. Augmenter le réalisme géométrique des lésions synthétiques améliorait aussi les scores en validation synthétique tout en les dégradant sur les acquisitions réelles.", "t150": "Échantillonnage de patchs équilibré en classes, environ 1:2 fond/lésion, et a priori mesurés sur données réelles plutôt que supposés, chaque niveau de réalisme étant évalué sur des acquisitions réelles et non synthétiques.", "t151": "Dice de 0,85 sur les données de validation ISLES réelles contre 0,73 en référence, soit environ 10 % d'amélioration. Les quatre configurations dépassent 0,81. Note : 5,75/6.", "t152": "Les deux capteurs échouent dans des régimes opposés. Les retours lidar se raréfient avec la distance et la caméra n'offre pas de profondeur fiable : aucun des deux ne couvre seul le champ proche et le champ lointain.", "t153": "Pondérer les deux capteurs selon la distance plutôt que de les moyenner, en utilisant la géométrie lidar de près et les détections caméra plus loin.", "t154": "Portée de détection étendue et précision de localisation améliorée, contribuant à une place dans le top 10 à l'European Rover Challenge.", "t155": "Le dépôt lié est la base de code de simulation partagée de l'équipe EPFL Xplore. Ma contribution y est la fusion de capteurs.", "t156": "Le réglage des hyperparamètres évolutionnaires, taille de population, nombre de générations et taux de descendance, puisqu'ils déterminent si la recherche converge. Les démarches exploitant les imprécisions du modèle de contact simulé ne se transféraient pas non plus au matériel.", "t157": "Balayer les hyperparamètres à budget d'évaluation fixe et sélectionner les conceptions sur la performance après transfert plutôt que sur la seule fitness simulée.", "t158": "Le temps de calcul du contrôleur retarde l'arrivée de la commande aux actionneurs. À deux pas d'échantillonnage de retard la boucle fermée oscille, et à trois elle devient instable.", "t159": "Prédire l'état en avance du retard attendu à partir des commandes déjà envoyées mais pas encore appliquées, puis optimiser depuis cet état prédit.", "t160": "Passer de quatre modules développés indépendamment, vision, navigation globale, commande et évitement d'obstacles, à une pile logicielle asynchrone unique. Les modules tournaient à des fréquences différentes et devaient rester cohérents pendant que l'environnement changeait, par exemple lorsque des ombres modifiaient la vue caméra.", "t161": "Définir une estimation d'état partagée que chaque module lit et écrit, afin que chacun tourne à sa propre fréquence, et faire remonter à chaque étape de perception un indicateur de validité pour que le filtre bascule sur l'odométrie au lieu de consommer une mauvaise mesure.", "t162": "La surface de jeu était une nappe à motif de feuilles dont les formes et les couleurs ressemblent aux marquages des cartes, ce qui produisait à la fois des faux positifs sur le fond et des cartes manquées.", "t163": "Renforcer la chaîne de traitement d'image en amont du détecteur, en segmentant les cartes du fond pour que la classification s'applique aux régions de carte et non à l'image brute.", "t164": "Une simulation Mitsuba 3 couvrant lidar, imagerie transitoire, lumière structurée, stéréo et caméras conventionnelles, chaque tâche déclarant son livrable, sa métrique et ses bornes de paramètres dans un manifeste.", "t165": "Une bibliothèque d'algorithmes allant des enveloppes visuelles à la stéréo photométrique, au désembuage et à l'appariement multi-vues appris, à partir de laquelle l'agent compose un pipeline.", "t166": "Huit tâches de référence couvrant géométrie, apparence, brouillard et occlusion, ainsi que la boucle d'évaluation qui rend, note et met en cache chaque conception soumise.", "t167": "Un modèle Segment Anything 2 affiné pour la segmentation de routes, piloté par son encodeur de prompt avec des points et le masque de l'image précédente.", "t168": "Une étape de masquage des véhicules pour que la surface routière occultée soit reconstituée plutôt que laissée en trous dans le masque.", "t169": "Une référence satellite assemblée à partir d'images Google Earth avec OpenStitching, après évaluation de SIFT, ORB, LightGlue, SuperGlue et LoFTR pour l'étape d'appariement.", "t170": "Une analyse statistique d'ISLES-2022 mesurant le volume et le nombre de lésions, le contraste d'intensité ADC et DWI, la localisation anatomique via SynthSeg et des descripteurs de forme 3D.", "t171": "Un générateur qui insère des lésions synthétiques dans des acquisitions saines du Human Connectome Project selon ces a priori mesurés, avec une bibliothèque de formes ajustée aux distributions des descripteurs.", "t172": "Entraînement et évaluation d'un Attention U-Net 3D sous MONAI sur quatre configurations de réalisme de simulation croissant.", "t173": "La fusion LiDAR et caméra de profondeur pour la détection d'objets et la localisation, intégrée à la pile de navigation ROS 2 du rover.", "t174": "L'intégration et le réglage des capteurs utilisés à l'European Rover Challenge.", "t175": "Les tests sur la simulation Gazebo du rover développée par l'équipe, permettant de développer le pipeline sans le véhicule physique.", "t176": "La boucle évolutionnaire optimisant conjointement la morphologie et le contrôleur d'un robot modulaire pour un objectif de locomotion.", "t177": "La fabrication du meilleur design, à partir de modules imprimés en 3D et de servomoteurs.", "t178": "La comparaison entre la démarche évoluée en simulation et le même design sur un sol réel.", "t179": "Quatre contrôleurs MPC sous contraintes, un par sous-système découplé, chacun avec un ensemble invariant terminal et un coût terminal garantissant la faisabilité récursive.", "t180": "Un observateur de perturbation sur un modèle augmenté, assurant un suivi sans erreur statique lorsque la masse réelle de la fusée diffère du modèle.", "t181": "Une MPC non linéaire sur le modèle complet à douze états sous CasADi, discrétisée par RK4 et résolue avec IPOPT.", "t182": "Une vision par caméra zénithale extrayant les obstacles sous forme de polygones, dilatant leurs sommets pour l'encombrement du robot, construisant un graphe de visibilité et y appliquant Dijkstra.", "t183": "Un filtre de Kalman étendu à cinq états fusionnant la pose caméra et l'odométrie des roues, basculant sur un modèle de mesure fondé sur les seuls encodeurs lorsque la vue caméra est perdue.", "t184": "Une commande proportionnelle en distance et en cap, avec évitement réactif piloté par les capteurs de proximité.", "t185": "Un jeu de données annoté à la main, construit et augmenté sous Roboflow, de la carte seule aux étalements encombrés.", "t186": "Un détecteur YOLO entraîné à localiser et classifier chaque carte.", "t187": "Une étape de segmentation séparant les cartes du fond avant la classification.", "t188": "L'agent de proposition ne voit jamais les scènes réservées sur lesquelles il est noté. La critique du validateur est le seul canal entre les tours.", "t189": "La conception étendue au mouvement : une trajectoire ordonnée de points de vue du poignet, chacun validé par la cinématique inverse du bras.", "t190": "Localisation d'une cible occultée dans une pièce meublée. Vérité terrain en rouge, prédiction en cyan.", "t191": "La segmentation appliquée à la vidéo de drone.", "t192": "Galatsi, Athènes, assemblée à partir d'images Google Earth pour former la référence de validation.", "t193": "Prédictions du modèle sur un volume réservé.", "t194": "Retours lidar du rover sur le terrain de type martien.", "t195": "En simulation.", "t196": "Le même design, fabriqué et en fonctionnement.", "t197": "Retard d'actionnement de trois pas, entièrement compensé. Sans compensation, ce même cas est instable.", "t198": "Inférence sur un étalement de cartes qui se recouvrent, chacune correctement classifiée avec une confiance de 0,96 à 0,98.", "t199": "Dépôt", "t200": "Dépôt", "t201": "Dépôt", "t202": "Dépôt", "t203": "Dépôt", "t204": "Dépôt", "t205": "Dépôt", "t206": "Dépôt", "t207": "<i style=\"background:#9AA5AF\"></i>Vérité terrain", "t208": "<i style=\"background:#4F8FE8\"></i>Reconstruction", "t209": "Faites glisser un maillage pour le faire tourner.", "t210": "Gabarits de lésions synthétiques générés pour correspondre aux statistiques de forme mesurées. Faites glisser pour faire tourner.", "c211": "2026 · MIT Camera Culture Lab · Projet de master", "c212": "2025 · Laboratoire des systèmes de transport urbain, EPFL", "c213": "2026 · Laboratoire de traitement des signaux 5, EPFL", "c214": "2023 · EPFL Xplore · European Rover Challenge", "c215": "2022 · EPFL MICRO-515 Robotique évolutionnaire", "c216": "2024 · EPFL ME-425 Commande prédictive", "c217": "2024 · EPFL MICRO-452 Bases de la robotique mobile", "c218": "2026 · EPFL · Projet de groupe"};
+  var EN_T={};
+  function harvest(scope){
+    scope.querySelectorAll("[data-t]").forEach(function(el){
+      var k=el.getAttribute("data-t");
+      if(!(k in EN_T)) EN_T[k]=el.innerHTML;
+    });
+    scope.querySelectorAll("[data-ctx-key]").forEach(function(el){
+      var k=el.getAttribute("data-ctx-key");
+      if(!(k in EN_T)) EN_T[k]=el.getAttribute("data-ctx");
+    });
+  }
+  harvest(document);
+  document.querySelectorAll("template").forEach(function(t){ harvest(t.content); });
+
+  var lang="en";
+  try{ lang=localStorage.getItem("lang")||"en"; }catch(e){}
+
+  function applyLang(scope){
+    var dict=(lang==="fr")?FR_T:EN_T;
+    scope.querySelectorAll("[data-t]").forEach(function(el){
+      var k=el.getAttribute("data-t");
+      var v=dict[k]; if(v===undefined) v=EN_T[k];
+      if(v!==undefined && el.innerHTML!==v) el.innerHTML=v;
+    });
+    scope.querySelectorAll("[data-ctx-key]").forEach(function(el){
+      var k=el.getAttribute("data-ctx-key");
+      var v=dict[k]; if(v===undefined) v=EN_T[k];
+      if(v!==undefined) el.setAttribute("data-ctx",v);
+    });
+  }
+  function setLang(l){
+    lang=l;
+    try{ localStorage.setItem("lang",l); }catch(e){}
+    root.lang=l;
+    document.getElementById("langbtn").textContent=(l==="fr")?"EN":"FR";
+    applyLang(document);
+    document.querySelectorAll("template").forEach(function(t){ applyLang(t.content); });
+  }
+  document.getElementById("langbtn").addEventListener("click",function(){
+    setLang(lang==="fr"?"en":"fr");
+  });
+  setLang(lang);
+
   var MEDIA={CV_PDF:"assets/Ahmed_Boubakry_CV.pdf",ROAD_ANIM:"assets/road_anim.webp",EVO_ANIM:"assets/evo_anim.webp",EVO_REAL_ANIM:"assets/evo_real_anim.webp",LESION:"assets/lesion.webp",ROVER:"assets/rover.webp",ROVER_LIDAR:"assets/rover_lidar.webp"};
   function resolveMedia(scope){
     scope.querySelectorAll("[data-src]").forEach(function(el){
