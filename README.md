@@ -3,7 +3,7 @@
 Personal portfolio site. Robotics and computer vision: computational imaging, medical image
 analysis, control and mobile robotics.
 
-Live at **https://ahmedamyx.github.io**
+Live at **[ahmedamyx.github.io](https://ahmedamyx.github.io)**
 
 ## Contents
 
